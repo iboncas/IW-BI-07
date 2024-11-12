@@ -9,5 +9,7 @@ urlpatterns = [
     path('paises/<int:country_id>/', views.pais, name='pais'),
     path('categorias/', views.categorias, name='categorias'),
     path('categorias/<int:category_id>/', views.categoria, name='categoria'),
+    path('aboutus/', views.aboutus, name='aboutus'),
+    path('contacto/', views.contacto, name='contacto')
 ]
 

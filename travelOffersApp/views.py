@@ -28,3 +28,10 @@ def categorias(request):
 def categoria(request, category_id):
     return render(request, 'categoria.html', {'category_id': category_id})
 
+# Sobre Nosotros
+def aboutus(request):
+    return render(request, 'aboutus.html')
+
+# Contacto
+def contacto(request):
+    return render(request, 'contacto.html')

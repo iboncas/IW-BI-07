@@ -4,19 +4,19 @@
 
 {% block content %}
     <h1>{{ pais.nombre }}</h1>
-    <p><strong>Continent:</strong> {{ pais.continente }}</p>
+    <p><strong>Continente:</strong> {{ pais.continente }}</p>
     <p>{{ pais.descripcion }}</p>
 
-    <h2>Available Offers</h2>
+    <h2>Ofertas disponibles</h2>
     <ul>
         {% for oferta in pais.ofertas.all %}
             <li>
-                <strong>{{ oferta.nombre }}</strong> - {{ oferta.descripcion }}
+                <a href="{% url 'oferta' oferta.id_oferta %}">{{ oferta.nombre }}</a> - {{ oferta.descripcion }}
                 <br>
-                Price: ${{ oferta.precio }} - Available: {{ oferta.disponible|yesno:"Yes,No" }}
+                Precio: ${{ oferta.precio }} - Disponible: {{ oferta.disponible|yesno:"Sí,No" }}
             </li>
         {% empty %}
-            <li>No offers available for this country.</li>
+            <li>No hay ofertas disponibles para este país.</li>
         {% endfor %}
     </ul>
 {% endblock %}

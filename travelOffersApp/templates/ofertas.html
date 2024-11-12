@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Travel Offers{% endblock %}
+{% block title %}Ofertas de Viaje{% endblock %}
 
 {% block content %}
-
+    <h1>Ofertas de Viaje</h1>
+    <ul>
+        {% for oferta in ofertas %}
+            <li>
+                <a href="{% url 'oferta' oferta.id_oferta %}">{{ oferta.nombre }}</a>
+                - {{ oferta.descripcion }}
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

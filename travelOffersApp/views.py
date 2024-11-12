@@ -7,11 +7,13 @@ def landing(request):
 
 # Todas las ofertas
 def ofertas(request):
-    return render(request, 'ofertas.html')
+    ofertas = Oferta.objects.all()
+    return render(request, 'ofertas.html', {'ofertas': ofertas})
 
 # Info de oferta
-def oferta(request, offer_id):
-    return render(request, 'oferta.html', {'offer_id': offer_id})
+def oferta(request, id_oferta):
+    oferta = get_object_or_404(Oferta, id_oferta=id_oferta)
+    return render(request, 'oferta.html', {'oferta': oferta})
 
 # Todos los países
 def paises(request):

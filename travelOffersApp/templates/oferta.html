@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Travel Offers{% endblock %}
+{% block title %}{{ oferta.nombre }}{% endblock %}
 
 {% block content %}
-
+    <h1>{{ oferta.nombre }}</h1>
+    <p>{{ oferta.descripcion }}</p>
+    <p><strong>Precio:</strong> ${{ oferta.precio }}</p>
+    <p><strong>Fecha inicio:</strong> {{ oferta.fecha_inicio }}</p>
+    <p><strong>Fecha fin:</strong> {{ oferta.fecha_fin }}</p>
+    <p><strong>País:</strong> {{ oferta.pais }}</p>
+    <p><strong>Disponible:</strong> {{ oferta.disponible|yesno:"Sí,No" }}</p>
 {% endblock %}

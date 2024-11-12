@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Pais, Categoria, Oferta
+admin.site.register(Pais)
+admin.site.register(Categoria)
+admin.site.register(Oferta)

@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Pais, Categoria, Oferta
 
 # Landing
 def landing(request):
@@ -14,11 +15,13 @@ def oferta(request, offer_id):
 
 # Todos los países
 def paises(request):
-    return render(request, 'paises.html')
+    paises = Pais.objects.all()
+    return render(request, 'paises.html', {'paises': paises})
 
 # Info de país
-def pais(request, country_id):
-    return render(request, 'pais.html', {'country_id': country_id})
+def pais(request, nombre):
+    pais = get_object_or_404(Pais, nombre=nombre)
+    return render(request, 'pais.html', {'pais': pais})
 
 # Todas las categorías
 def categorias(request):

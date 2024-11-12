@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 
-{% block title %}Travel Offers{% endblock %}
+{% block title %}Countries{% endblock %}
 
 {% block content %}
-
+    <h1>Countries</h1>
+    <ul>
+        {% for pais in paises %}
+            <li>
+                <a href="{% url 'pais' pais.nombre %}">{{ pais.nombre }}</a>
+                - {{ pais.descripcion }}
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

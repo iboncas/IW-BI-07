@@ -1,8 +1,5 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
-
 class Pais(models.Model):
     nombre = models.CharField(primary_key=True, max_length=100)
     descripcion = models.TextField()

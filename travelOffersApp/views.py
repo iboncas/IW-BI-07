@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Pais, Categoria, Oferta
+from django.core.mail import send_mail
+from django.conf import settings
+from django.http import HttpResponse
 
 # Landing
 def landing(request):
@@ -27,12 +30,12 @@ def pais(request, nombre):
 
 # Todas las categorías
 def categorias(request):
-	categorias = Categoria.objects.all()
+    categorias = Categoria.objects.all()
     return render(request, 'categorias.html', {'categorias': categorias})
 
 # Info de categoría
-def categoria(request, category_id):
-	categoria = get_object_or_404(Categoria, id=category_id)
+def categoria(request, nombre):
+    categoria = get_object_or_404(Categoria, nombre=nombre)
     return render(request, 'categoria.html', {'categoria': categoria})
 
 # Sobre Nosotros

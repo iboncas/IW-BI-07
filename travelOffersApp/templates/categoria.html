@@ -11,10 +11,9 @@
     <ul>
         {% for oferta in categoria.ofertas %}
             <li>
-                <a href="{% url 'oferta' oferta.id_oferta %}">{{ oferta.nombre }}</a>
+                <a href="{% url 'categoria' categoria.nombre %}">{{ oferta.nombre }}</a>
                 - {{ oferta.descripcion }}
             </li>
         {% endfor %}
     </ul>
 {% endblock %}
-

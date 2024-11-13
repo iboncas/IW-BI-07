@@ -6,7 +6,7 @@
     <h1>Contacto</h1>
     <p>Si tienes alguna consulta o deseas más información sobre nuestras ofertas, no dudes en ponerte en contacto con nosotros a través del siguiente formulario.</p>
     
-    <form method="post" action="{% url 'enviar_contacto' %}">
+    <form method="post" action="">
         {% csrf_token %}
         <div>
             <label for="nombre">Nombre:</label>

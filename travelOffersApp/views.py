@@ -27,11 +27,13 @@ def pais(request, nombre):
 
 # Todas las categorías
 def categorias(request):
-    return render(request, 'categorias.html')
+	categorias = Categoria.objects.all()
+    return render(request, 'categorias.html', {'categorias': categorias})
 
 # Info de categoría
 def categoria(request, category_id):
-    return render(request, 'categoria.html', {'category_id': category_id})
+	categoria = get_object_or_404(Categoria, id=category_id)
+    return render(request, 'categoria.html', {'categoria': categoria})
 
 # Sobre Nosotros
 def aboutus(request):

@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}Travel Offers{% endblock %}
+{% block title %}Categorías de Viaje{% endblock %}
 
 {% block content %}
-
+    <h1>Categorías de Viaje</h1>
+    <ul>
+        {% for categoria in categorias %}
+            <li>
+                <a href="{% url 'categoria' categoria.id_categoria %}">{{ categoria.nombre }}</a>
+                - {{ categoria.descripcion }}
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
+

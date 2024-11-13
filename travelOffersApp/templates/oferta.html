@@ -10,4 +10,11 @@
     <p><strong>Fecha fin:</strong> {{ oferta.fecha_fin }}</p>
     <p><strong>País:</strong> {{ oferta.pais }}</p>
     <p><strong>Disponible:</strong> {{ oferta.disponible|yesno:"Sí,No" }}</p>
+
+    <h2>Categorías de esta oferta</h2>
+    <ul>
+        {% for categoria in oferta.categorias.all %}
+            <li><a href="{% url 'categoria' categoria.nombre %}">{{ categoria.nombre }}</a></li>
+        {% endfor %}
+    </ul>
 {% endblock %}

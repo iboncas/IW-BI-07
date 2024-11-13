@@ -5,13 +5,11 @@
 {% block content %}
     <h1>{{ categoria.nombre }}</h1>
     <p>{{ categoria.descripcion }}</p>
-    <p><strong>Popularidad:</strong> {{ categoria.popularidad }}</p>
-    <p><strong>Número de ofertas:</strong> {{ categoria.num_ofertas }}</p>
     <h2>Ofertas en esta categoría</h2>
     <ul>
-        {% for oferta in categoria.ofertas %}
+        {% for oferta in categoria.ofertas.all %}
             <li>
-                <a href="{% url 'categoria' categoria.nombre %}">{{ oferta.nombre }}</a>
+                <a href="{% url 'oferta' oferta.id_oferta %}">{{ oferta.nombre }}</a>
                 - {{ oferta.descripcion }}
             </li>
         {% endfor %}

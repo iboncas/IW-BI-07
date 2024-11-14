@@ -4,7 +4,7 @@ class Pais(models.Model):
     nombre = models.CharField(primary_key=True, max_length=100)
     descripcion = models.TextField()
     continente = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='img/', blank=True, null=True, )
+    image = models.ImageField(upload_to='travelOffersApp/static/img/', blank=True, null=True)
 
     def __str__(self):
         return self.nombre
@@ -12,6 +12,7 @@ class Pais(models.Model):
 class Categoria(models.Model):
     nombre = models.CharField(primary_key=True, max_length=100)
     descripcion = models.TextField()
+    image = models.ImageField(upload_to='travelOffersApp/static/img/', blank=True, null=True)
 
     def __str__(self):
         return self.nombre
@@ -26,6 +27,7 @@ class Oferta(models.Model):
     pais = models.ForeignKey(Pais, on_delete=models.CASCADE, related_name='ofertas')
     categorias = models.ManyToManyField(Categoria, related_name='ofertas')
     disponible = models.BooleanField(default=True)
+    image = models.ImageField(upload_to='travelOffersApp/static/img/', blank=True, null=True)
 
     def __str__(self):
         return self.nombre

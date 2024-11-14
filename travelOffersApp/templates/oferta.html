@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block title %}{{ oferta.nombre }}{% endblock %}
 
 {% block content %}
     <h1>{{ oferta.nombre }}</h1>
+    <img alt="{{ oferta.image.name }}" src="{% static oferta.image.name %}" class="img-fluid"/>
     <p>{{ oferta.descripcion }}</p>
     <p><strong>Precio:</strong> ${{ oferta.precio }}</p>
     <p><strong>Fecha inicio:</strong> {{ oferta.fecha_inicio }}</p>
     <p><strong>Fecha fin:</strong> {{ oferta.fecha_fin }}</p>
-    <p><strong>País:</strong> {{ oferta.pais }}</p>
+    <p><strong>País:</strong> <a href="{% url 'pais' oferta.pais %}">{{ oferta.pais }}</a></p>
     <p><strong>Disponible:</strong> {{ oferta.disponible|yesno:"Sí,No" }}</p>
 
     <h2>Categorías de esta oferta</h2>

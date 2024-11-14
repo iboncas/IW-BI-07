@@ -6,7 +6,14 @@ from django.http import HttpResponse
 
 # Landing
 def landing(request):
-    return render(request, 'index.html')
+    paises = Pais.objects.all()
+    baratas = []
+    for pais in paises:
+        barata = (Oferta.objects.filter(pais=pais, disponible=True).order_by('precio').first())
+        if barata:
+            baratas.append(barata)
+    contexto = {'ofertas_mas_baratas': baratas}
+    return render(request, 'index.html', contexto)
 
 # Todas las ofertas
 def ofertas(request):

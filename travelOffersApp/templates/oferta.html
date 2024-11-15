@@ -31,7 +31,7 @@
                     </div>
                     <div>
                         <strong class="text-muted">País:</strong>
-                        <p>{{ oferta.pais }}</p>
+                        <p class="mb-1"><a href="{% url 'pais' oferta.pais.nombre %}" class="text-success">{{ oferta.pais.nombre }}</a></p>
                     </div>
                     <div>
                         <strong class="text-muted">Disponible:</strong>

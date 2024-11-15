@@ -5,19 +5,55 @@
 {% block title %}{{ oferta.nombre }}{% endblock %}
 
 {% block content %}
-    <h1>{{ oferta.nombre }}</h1>
-    <img alt="{{ oferta.image.name }}" src="{% static oferta.image.name %}" class="img-fluid"/>
-    <p>{{ oferta.descripcion }}</p>
-    <p><strong>Precio:</strong> ${{ oferta.precio }}</p>
-    <p><strong>Fecha inicio:</strong> {{ oferta.fecha_inicio }}</p>
-    <p><strong>Fecha fin:</strong> {{ oferta.fecha_fin }}</p>
-    <p><strong>País:</strong> <a href="{% url 'pais' oferta.pais %}">{{ oferta.pais }}</a></p>
-    <p><strong>Disponible:</strong> {{ oferta.disponible|yesno:"Sí,No" }}</p>
+    <div class="container my-5">
+        <!-- Country Title, Image, and Description Section -->
+        <div class="card shadow-sm mb-4">
+            {% if oferta.image %}
+                <img src="{% static oferta.image.name %}" alt="{{ oferta.nombre }}" class="card-img-top img-fluid rounded-top"/>
+            {% endif %}
+            <div class="card-body">
+                <h1 class="card-title text-center text-primary">{{ oferta.nombre }}</h1>
+                <p class="card-text">{{ oferta.descripcion }}</p>
 
-    <h2>Categorías de esta oferta</h2>
-    <ul>
-        {% for categoria in oferta.categorias.all %}
-            <li><a href="{% url 'categoria' categoria.nombre %}">{{ categoria.nombre }}</a></li>
-        {% endfor %}
-    </ul>
+                <!-- Horizontal Layout for Details -->
+                <div class="d-flex flex-wrap justify-content-around text-center mt-4">
+                    <div>
+                        <strong class="text-muted">Precio:</strong>
+                        <p>${{ oferta.precio }}</p>
+                    </div>
+                    <div>
+                        <strong class="text-muted">Fecha inicio:</strong>
+                        <p>{{ oferta.fecha_inicio }}</p>
+                    </div>
+                    <div>
+                        <strong class="text-muted">Fecha fin:</strong>
+                        <p>{{ oferta.fecha_fin }}</p>
+                    </div>
+                    <div>
+                        <strong class="text-muted">País:</strong>
+                        <p>{{ oferta.pais }}</p>
+                    </div>
+                    <div>
+                        <strong class="text-muted">Disponible:</strong>
+                        <p>{{ oferta.disponible|yesno:"Sí,No" }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Categories Section -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title text-dark mb-3">Categorías</h2>
+                <ul class="list-group list-group-flush">
+                    {% for categoria in oferta.categorias.all %}
+                        <li class="list-group-item">
+                            <h5 class="mb-1"><a href="{% url 'categoria' categoria.nombre %}" class="text-success">{{ categoria.nombre }}</a></h5>
+                            <p class="mb-1 text-muted">{{ categoria.descripcion }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}

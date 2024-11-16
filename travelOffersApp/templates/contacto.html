@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base.html" %}\
 
 {% block title %}Contacto{% endblock %}
 
@@ -63,5 +63,34 @@
     </div>
 </div>
 <!--Formulario End-->
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">¡Enviado con éxito!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Tu mensaje se ha enviado correctamente. Nos pondremos en contacto contigo pronto.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Success Modal -->
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        $('#successModal').modal('show');
+        this.reset();
+    });
+</script>
 {% endblock %}
 

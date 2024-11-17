@@ -1,15 +1,30 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block title %}Categorías de Viaje{% endblock %}
 
 {% block content %}
-    <h1>Categorías de Viaje</h1>
-    <ul>
+<div class="container my-5">
+    <h1 class="text-center mb-4">Categorías de Viaje</h1>
+    <ul class="list-unstyled">
         {% for categoria in categorias %}
-            <li>
-                <a href="{% url 'categoria' categoria.nombre %}">{{ categoria.nombre }}</a>
-                - {{ categoria.descripcion }}
+            <li class="mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        {% if categoria.image %}
+                            <img src="{% static categoria.image.name %}" alt="{{ categoria.nombre }}" class="img-fluid rounded" />
+                        {% endif %}
+                    </div>
+                    <div class="col-md-9">
+                        <h3 class="mb-1">
+                            <a href="{% url 'categoria' categoria.nombre %}" class="text-primary">{{ categoria.nombre }}</a>
+                        </h3>
+                        <p class="text-muted">{{ categoria.descripcion }}</p>
+                    </div>
+                </div>
             </li>
         {% endfor %}
     </ul>
+</div>
 {% endblock %}

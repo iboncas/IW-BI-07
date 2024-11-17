@@ -1,17 +1,35 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block title %}{{ categoria.nombre }}{% endblock %}
 
 {% block content %}
-    <h1>{{ categoria.nombre }}</h1>
-    <p>{{ categoria.descripcion }}</p>
-    <h2>Ofertas en esta categoría</h2>
-    <ul>
-        {% for oferta in categoria.ofertas.all %}
-            <li>
-                <a href="{% url 'oferta' oferta.id_oferta %}">{{ oferta.nombre }}</a>
-                - {{ oferta.descripcion }}
-            </li>
-        {% endfor %}
-    </ul>
+<div class="container my-5">
+    <!-- Category Title, Image, and Description Section -->
+    <div class="card shadow-sm mb-4">
+        {% if categoria.image %}
+            <img src="{% static categoria.image.name %}" alt="{{ categoria.nombre }}" class="card-img-top img-fluid rounded-top" />
+        {% endif %}
+        <div class="card-body">
+            <h1 class="card-title text-center text-primary">{{ categoria.nombre }}</h1>
+            <p class="card-text">{{ categoria.descripcion }}</p>
+        </div>
+    </div>
+    
+    <!-- Offers Section -->
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title text-dark mb-3">Ofertas en esta categoría</h2>
+            <ul class="list-group list-group-flush">
+                {% for oferta in categoria.ofertas.all %}
+                    <li class="list-group-item">
+                        <h5 class="mb-1"><a href="{% url 'oferta' oferta.id_oferta %}" class="text-success">{{ oferta.nombre }}</a></h5>
+                        <p class="mb-1 text-muted">{{ oferta.descripcion }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}

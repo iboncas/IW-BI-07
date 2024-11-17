@@ -9,7 +9,7 @@
     <!-- Country Title, Image, and Description Section -->
     <div class="card shadow-sm mb-4">
         {% if pais.image %}
-            <img src="{% static pais.image.name %}" alt="{{ pais.nombre }}" class="card-img-top img-fluid rounded-top"/>
+            <img src="{% static pais.image.name %}" alt="{{ pais.nombre }}" class="card-img-top img-fluid rounded-top">
         {% endif %}
         <div class="card-body">
             <h1 class="card-title text-center text-primary">{{ pais.nombre }}</h1>

@@ -9,7 +9,7 @@
         <!-- Country Title, Image, and Description Section -->
         <div class="card shadow-sm mb-4">
             {% if oferta.image %}
-                <img src="{% static oferta.image.name %}" alt="{{ oferta.nombre }}" class="card-img-top img-fluid rounded-top"/>
+                <img src="{% static oferta.image.name %}" alt="{{ oferta.nombre }}" class="card-img-top img-fluid rounded-top">
             {% endif %}
             <div class="card-body">
                 <h1 class="card-title text-center text-primary">{{ oferta.nombre }}</h1>

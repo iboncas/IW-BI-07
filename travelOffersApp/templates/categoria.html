@@ -9,7 +9,7 @@
     <!-- Category Title, Image, and Description Section -->
     <div class="card shadow-sm mb-4">
         {% if categoria.image %}
-            <img src="{% static categoria.image.name %}" alt="{{ categoria.nombre }}" class="card-img-top img-fluid rounded-top" />
+            <img src="{% static categoria.image.name %}" alt="{{ categoria.nombre }}" class="card-img-top img-fluid rounded-top">
         {% endif %}
         <div class="card-body">
             <h1 class="card-title text-center text-primary">{{ categoria.nombre }}</h1>

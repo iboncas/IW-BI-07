@@ -3,51 +3,62 @@ from .models import Pais, Categoria, Oferta
 from django.core.mail import send_mail
 from django.conf import settings
 from django.http import HttpResponse
+from django.views.generic import TemplateView, ListView, DetailView
 
 # Landing
-def landing(request):
-    paises = Pais.objects.all()
-    baratas = []
-    for pais in paises:
-        barata = (Oferta.objects.filter(pais=pais, disponible=True).order_by('precio').first())
-        if barata:
-            baratas.append(barata)
-    contexto = {'ofertas_mas_baratas': baratas}
-    return render(request, 'index.html', contexto)
+class LandingView(TemplateView):
+    template_name = 'index.html'  # Especifica el template que se renderiza
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        paises = Pais.objects.all()
+        baratas = []
+        for pais in paises:
+            barata = Oferta.objects.filter(pais=pais, disponible=True).order_by('precio').first()
+            if barata:
+                baratas.append(barata)
+        context['ofertas_mas_baratas'] = baratas
+        return context
 
 # Todas las ofertas
-def ofertas(request):
-    ofertas = Oferta.objects.all()
-    return render(request, 'ofertas.html', {'ofertas': ofertas})
+class OfertasView(ListView):
+    model = Oferta
+    template_name = 'ofertas.html'
+    context_object_name = 'ofertas'
 
 # Info de oferta
-def oferta(request, id_oferta):
-    oferta = get_object_or_404(Oferta, id_oferta=id_oferta)
-    return render(request, 'oferta.html', {'oferta': oferta})
+class OfertaView(DetailView):
+    model = Oferta
+    template_name = 'oferta.html'
+    context_object_name = 'oferta'
 
 # Todos los países
-def paises(request):
-    paises = Pais.objects.all()
-    return render(request, 'paises.html', {'paises': paises})
+class PaisesView(ListView):
+    model = Pais
+    template_name = 'paises.html'
+    context_object_name = 'paises'
 
 # Info de país
-def pais(request, nombre):
-    pais = get_object_or_404(Pais, nombre=nombre)
-    return render(request, 'pais.html', {'pais': pais})
+class PaisView(DetailView):
+    model = Pais
+    template_name = 'pais.html'
+    context_object_name = 'pais'
 
 # Todas las categorías
-def categorias(request):
-    categorias = Categoria.objects.all()
-    return render(request, 'categorias.html', {'categorias': categorias})
+class CategoriasView(ListView):
+    model = Categoria
+    template_name = 'categorias.html'
+    context_object_name = 'categorias'
 
 # Info de categoría
-def categoria(request, nombre):
-    categoria = get_object_or_404(Categoria, nombre=nombre)
-    return render(request, 'categoria.html', {'categoria': categoria})
+class CategoriaView(DetailView):
+    model = Categoria
+    template_name = 'categoria.html'
+    context_object_name = 'categoria'
 
 # Sobre Nosotros
-def aboutus(request):
-    return render(request, 'aboutus.html')
+class AboutUsView(TemplateView):
+    template_name = "aboutus.html"
 
 # Contacto
 def contacto(request):

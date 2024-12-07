@@ -1,0 +1,30 @@
+{% extends "admin/change_list.html" %}
+
+{% block content %}
+  <h1>Listado de Ofertas</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Precio</th>
+        <th>País</th>
+        <th>Disponible</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for oferta in cl.result_list %}
+        <tr>
+          <td>{{ oferta.titulo }}</td>
+          <td>{{ oferta.precio }}</td>
+          <td>{{ oferta.pais.nombre }}</td>
+          <td>{{ oferta.disponible }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4">No hay ofertas disponibles.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% block pagination %} {{ cl.paginator }} {% endblock %}
+{% endblock %}

@@ -4,6 +4,10 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic.edit import FormView
+from django import forms
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Landing
 class LandingView(TemplateView):
@@ -60,6 +64,21 @@ class CategoriaView(DetailView):
 class AboutUsView(TemplateView):
     template_name = "aboutus.html"
 
+# Definimos el formulario
+class ContactForm(forms.Form):
+    nombre = forms.CharField(max_length=100, required=True, label="Nombre")
+    email = forms.EmailField(required=True, label="Email")
+    titulo = forms.CharField(max_length=100, required=True, label="Título")
+    mensaje = forms.CharField(widget=forms.Textarea, required=True, label="Mensaje")
+
 # Contacto
-def contacto(request):
-    return render(request, 'contacto.html')
+class ContactoView(FormView):
+    template_name = 'contacto.html'
+    form_class = ContactForm
+    success_url = '/contacto/'
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        return super().form_invalid(form)

@@ -1,0 +1,533 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-08 16:51+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: travelOffersApp/templates/aboutus.html:7
+#: travelOffersApp/templates/aboutus.html:16
+#: travelOffersApp/templates/aboutus.html:26
+#: travelOffersApp/templates/aboutus.html:46
+#: travelOffersApp/templates/base.html:75 travelOffersApp/views.py:105
+msgid "Sobre Nosotros"
+msgstr "About Us"
+
+#: travelOffersApp/templates/aboutus.html:21
+#: travelOffersApp/templates/base.html:68
+#: travelOffersApp/templates/contacto.html:20
+msgid "Home"
+msgstr "Home"
+
+#: travelOffersApp/templates/aboutus.html:40
+msgid "aboutus"
+msgstr ""
+
+#: travelOffersApp/templates/aboutus.html:49
+msgid "Ofrecemos los mejores paquetes turísticos dentro de su presupuesto"
+msgstr "We offer the best travel packages within your budget"
+
+#: travelOffersApp/templates/aboutus.html:52
+msgid ""
+"\n"
+"                        ¡Bienvenidos a nuestro sitio de viajes! Nos "
+"dedicamos a ayudarte a encontrar las mejores ofertas y experiencias de viaje "
+"inolvidables alrededor del mundo. Nuestra misión es hacer que viajar sea "
+"accesible, asequible y disfrutable para todos.\n"
+"                        "
+msgstr ""
+"\n"
+"                        Welcome to our travel site! We are dedicated to helping you find the best offers and unforgettable travel experiences around the world. Our mission is to make travel accessible, affordable, and enjoyable for everyone.\n"
+"                        "
+
+#: travelOffersApp/templates/aboutus.html:65
+#: travelOffersApp/templates/base.html:71
+#: travelOffersApp/templates/index.html:112
+msgid "Ofertas"
+msgstr "Offers"
+
+#: travelOffersApp/templates/aboutus.html:86
+msgid "Precios Competitivos"
+msgstr "Competitive Prices"
+
+#: travelOffersApp/templates/aboutus.html:89
+msgid "Disfruta de las mejores experiencias de viaje a precios asequibles"
+msgstr "Enjoy the best travel experiences at affordable prices"
+
+#: travelOffersApp/templates/aboutus.html:101
+msgid "Mejores Servicios"
+msgstr "Best Services"
+
+#: travelOffersApp/templates/aboutus.html:104
+msgid "Ofrecemos un servicio superior en cada detalle de tu viaje"
+msgstr "We offer superior service in every detail of your trip"
+
+#: travelOffersApp/templates/aboutus.html:116
+msgid "Cobertura Mundial"
+msgstr "Global Coverage"
+
+#: travelOffersApp/templates/aboutus.html:119
+msgid "Te llevamos a los mejores destinos alrededor del mundo."
+msgstr "We take you to the best destinations around the world."
+
+#: travelOffersApp/templates/base.html:8
+msgid "TRAVELER - Free Travel Website Template"
+msgstr "TRAVELER - Free Travel Website Template"
+
+#: travelOffersApp/templates/base.html:37
+msgid "info@traveler.com"
+msgstr "info@traveler.com"
+
+#: travelOffersApp/templates/base.html:39
+msgid "944 13 90 00"
+msgstr "944 13 90 00"
+
+#: travelOffersApp/templates/base.html:61
+msgid "TRAVEL"
+msgstr "TRAVEL"
+
+#: travelOffersApp/templates/base.html:61
+msgid "ER"
+msgstr "ER"
+
+#: travelOffersApp/templates/base.html:69
+#: travelOffersApp/templates/oferta.html:59
+msgid "Categorías"
+msgstr "Categories"
+
+#: travelOffersApp/templates/base.html:70
+#: travelOffersApp/templates/paises.html:6
+#: travelOffersApp/templates/paises.html:12
+msgid "Países"
+msgstr "Countries"
+
+#: travelOffersApp/templates/base.html:73
+msgid "Información"
+msgstr "Information"
+
+#: travelOffersApp/templates/base.html:76
+#: travelOffersApp/templates/contacto.html:6
+#: travelOffersApp/templates/contacto.html:15
+#: travelOffersApp/templates/contacto.html:25
+#: travelOffersApp/templates/contacto.html:38
+msgid "Contacto"
+msgstr "Contact"
+
+#: travelOffersApp/templates/base.html:85
+msgid "Cambiar idioma"
+msgstr "Change language"
+
+#: travelOffersApp/templates/categoria.html:7
+#: travelOffersApp/templates/categoria.html:19
+#: travelOffersApp/templates/categorias.html:27
+#: travelOffersApp/templates/oferta.html:66
+#, python-format
+msgid "%(categoria.nombre)s"
+msgstr "%(categoria.nombre)s"
+
+#: travelOffersApp/templates/categoria.html:22
+#: travelOffersApp/templates/categorias.html:31
+#: travelOffersApp/templates/oferta.html:70
+#, python-format
+msgid "%(categoria.descripcion)s"
+msgstr "%(categoria.descripcion)s"
+
+#: travelOffersApp/templates/categoria.html:31
+msgid "Ofertas en esta categoría"
+msgstr "Offers in this category"
+
+#: travelOffersApp/templates/categoria.html:38
+#: travelOffersApp/templates/index.html:123
+#: travelOffersApp/templates/oferta.html:7
+#: travelOffersApp/templates/oferta.html:15
+#: travelOffersApp/templates/oferta.html:19
+#: travelOffersApp/templates/ofertas.html:25
+#: travelOffersApp/templates/pais.html:42
+#, python-format
+msgid "%(oferta.nombre)s"
+msgstr "%(oferta.nombre)s"
+
+#: travelOffersApp/templates/categoria.html:42
+#: travelOffersApp/templates/oferta.html:22
+#: travelOffersApp/templates/ofertas.html:29
+#: travelOffersApp/templates/pais.html:46
+#, python-format
+msgid "%(oferta.descripcion)s"
+msgstr "%(oferta.descripcion)s"
+
+#: travelOffersApp/templates/categorias.html:7
+#: travelOffersApp/templates/categorias.html:13
+msgid "Categorías de Viaje"
+msgstr "Travel Categories"
+
+#: travelOffersApp/templates/contacto.html:41
+msgid "Contacta para cualquier duda"
+msgstr "Contact us for any inquiries"
+
+#: travelOffersApp/templates/contacto.html:51
+msgid "Nombre"
+msgstr "Name"
+
+#: travelOffersApp/templates/contacto.html:52
+msgid "Por favor, introduce tu nombre"
+msgstr "Please enter your name"
+
+#: travelOffersApp/templates/contacto.html:56
+msgid "Email"
+msgstr "Email"
+
+#: travelOffersApp/templates/contacto.html:57
+msgid "Por favor, introduce tu email"
+msgstr "Please enter your email"
+
+#: travelOffersApp/templates/contacto.html:62
+msgid "Título"
+msgstr "Subject"
+
+#: travelOffersApp/templates/contacto.html:63
+msgid "Por favor, introduce un título"
+msgstr "Please enter a subject"
+
+#: travelOffersApp/templates/contacto.html:67
+msgid "Mensaje"
+msgstr "Message"
+
+#: travelOffersApp/templates/contacto.html:69
+msgid "Por favor, introduce tu mensaje"
+msgstr "Please enter your message"
+
+#: travelOffersApp/templates/contacto.html:74
+msgid "Enviar"
+msgstr "Send"
+
+#: travelOffersApp/templates/contacto.html:91
+msgid "¡Enviado con éxito!"
+msgstr "Successfully Sent!"
+
+#: travelOffersApp/templates/contacto.html:98
+msgid ""
+"Tu mensaje se ha enviado correctamente. Nos pondremos en contacto contigo "
+"pronto."
+msgstr ""
+"Your message has been sent successfully. We will contact you soon."
+
+#: travelOffersApp/templates/contacto.html:102
+msgid "Cerrar"
+msgstr "Close"
+
+#: travelOffersApp/templates/index.html:7
+msgid "Travel Offers"
+msgstr "Travel Offers"
+
+#: travelOffersApp/templates/index.html:17
+#: travelOffersApp/templates/index.html:30
+msgid "Image"
+msgstr "Image"
+
+#: travelOffersApp/templates/index.html:21
+#: travelOffersApp/templates/index.html:34
+msgid "Tours y Viajes"
+msgstr "Tours and Travels"
+
+#: travelOffersApp/templates/index.html:24
+msgid "Descubramos el mundo juntos"
+msgstr "Let's Discover the World Together"
+
+#: travelOffersApp/templates/index.html:37
+msgid "Encuentra lugares asombrosos"
+msgstr "Find Amazing Places"
+
+#: travelOffersApp/templates/index.html:62
+msgid "Servicios"
+msgstr "Services"
+
+#: travelOffersApp/templates/index.html:65
+msgid "Servicios de Tours y Viajes"
+msgstr "Tour and Travel Services"
+
+#: travelOffersApp/templates/index.html:73
+msgid "Guía de Viaje"
+msgstr "Travel Guide"
+
+#: travelOffersApp/templates/index.html:76
+msgid ""
+"Descubre destinos únicos con la orientación experta de nuestros guías locales"
+msgstr ""
+"Discover unique destinations with expert guidance from our local guides"
+
+#: travelOffersApp/templates/index.html:84
+msgid "Reserva de Tickets"
+msgstr "Ticket Booking"
+
+#: travelOffersApp/templates/index.html:87
+msgid "Compra tus tickets de manera fácil y rápida para tus próximos viajes"
+msgstr "Purchase your tickets easily and quickly for your upcoming trips"
+
+#: travelOffersApp/templates/index.html:95
+msgid "Reserva de Hoteles"
+msgstr "Hotel Booking"
+
+#: travelOffersApp/templates/index.html:98
+msgid ""
+"Reserva el hotel ideal para tu estadía y disfruta de una experiencia cómoda "
+"y memorable"
+msgstr ""
+"Book the ideal hotel for your stay and enjoy a comfortable and memorable experience"
+
+#: travelOffersApp/templates/index.html:115
+msgid "Ofertas más económicas por país"
+msgstr "Cheapest Offers by Country"
+
+#: travelOffersApp/templates/index.html:125
+#, python-format
+msgid "%(oferta.pais.image.name)s"
+msgstr "%(oferta.pais.image.name)s"
+
+#: travelOffersApp/templates/index.html:126
+#: travelOffersApp/templates/oferta.html:28
+#: travelOffersApp/templates/pais.html:49
+msgid "Precio:"
+msgstr "Price:"
+
+#: travelOffersApp/templates/index.html:127
+#: travelOffersApp/templates/oferta.html:40
+msgid "País:"
+msgstr "Country:"
+
+#: travelOffersApp/templates/index.html:127
+#: travelOffersApp/templates/oferta.html:43
+#, python-format
+msgid "%(oferta.pais.nombre)s"
+msgstr "%(oferta.pais.nombre)s"
+
+#: travelOffersApp/templates/index.html:128
+msgid "Fecha:"
+msgstr "Date:"
+
+#: travelOffersApp/templates/index.html:130
+msgid "Ver Oferta"
+msgstr "View Offer"
+
+#: travelOffersApp/templates/oferta.html:32
+msgid "Fecha inicio:"
+msgstr "Start date:"
+
+#: travelOffersApp/templates/oferta.html:36
+msgid "Fecha fin:"
+msgstr "End date:"
+
+#: travelOffersApp/templates/oferta.html:48
+#: travelOffersApp/templates/pais.html:50
+msgid "Disponible:"
+msgstr "Available:"
+
+#: travelOffersApp/templates/ofertas.html:7
+msgid "Ofertas de Viaje"
+msgstr "Travel Offers"
+
+#: travelOffersApp/templates/ofertas.html:13
+msgid "Ofertas de viaje"
+msgstr "Travel offers"
+
+#: travelOffersApp/templates/ofertas.html:20
+#, python-format
+msgid "%(oferta.image.name)s"
+msgstr "%(oferta.image.name)s"
+
+#: travelOffersApp/templates/pais.html:7
+#: travelOffersApp/templates/pais.html:15
+#: travelOffersApp/templates/pais.html:19
+#: travelOffersApp/templates/paises.html:24
+#, python-format
+msgid "%(pais.nombre)s"
+msgstr "%(pais.nombre)s"
+
+#: travelOffersApp/templates/pais.html:22
+msgid "Continente:"
+msgstr "Continent:"
+
+#: travelOffersApp/templates/pais.html:23
+#, python-format
+msgid "%(pais.continente)s"
+msgstr "%(pais.continente)s"
+
+#: travelOffersApp/templates/pais.html:26
+#: travelOffersApp/templates/paises.html:28
+#, python-format
+msgid "%(pais.descripcion)s"
+msgstr "%(pais.descripcion)s"
+
+#: travelOffersApp/templates/pais.html:35
+msgid "Ofertas disponibles"
+msgstr "Available Offers"
+
+#: travelOffersApp/templates/pais.html:56
+msgid "No hay ofertas disponibles para este país."
+msgstr "There are no available offers for this country."
+
+#: travelOffersApp/templates/paises.html:19
+#, python-format
+msgid "%(pais.image.name)s"
+msgstr "%(pais.image.name)s"
+
+#: travelOffersApp/views.py:22
+msgid "Ofertas más baratas"
+msgstr "Cheapest Offers"
+
+#: travelOffersApp/views.py:35
+msgid "Todas las ofertas"
+msgstr "All Offers"
+
+#: travelOffersApp/views.py:47
+msgid "Detalles de la oferta"
+msgstr "Offer Details"
+
+#: travelOffersApp/views.py:59
+msgid "Todos los países"
+msgstr "All Countries"
+
+#: travelOffersApp/views.py:71
+msgid "Detalles del país"
+msgstr "Country Details"
+
+#: travelOffersApp/views.py:83
+msgid "Todas las categorías"
+msgstr "All Categories"
+
+#: travelOffersApp/views.py:95
+msgid "Detalles de la categoría"
+msgstr "Category Details"
+
+#: travelOffersApp/views.py:111
+msgid "Contáctanos"
+msgstr "Contact Us"
+
+msgid "Playa"
+msgstr "Beach"
+
+msgid "Si lo tuyo es sentir la brisa marina y caminar sobre la arena dorada, nuestras playas te ofrecen el refugio perfecto. Desde los destinos tropicales más exóticos hasta las costas más tranquilas, encontrarás el lugar ideal para descansar, nadar en aguas cristalinas y disfrutar de un entorno natural único. Vive el paraíso en playas de aguas turquesas, acantilados impresionantes y actividades acuáticas para todos los gustos. ¿Estás listo para tu próxima escapada a la playa?"
+msgstr "If you love feeling the sea breeze and walking on golden sand, our beaches offer the perfect retreat. From the most exotic tropical destinations to the calmest shores, you'll find the ideal spot to relax, swim in crystal-clear waters, and enjoy a unique natural setting. Experience paradise with turquoise waters, breathtaking cliffs, and water activities for every taste. Are you ready for your next beach getaway?"
+
+msgid "	Montaña"
+msgstr "Mountains"
+
+msgid "Si eres amante de la naturaleza y el aire fresco de las alturas, las montañas te esperan con sus paisajes impresionantes, rutas de senderismo y deportes de invierno. Descubre senderos rodeados de bosques, lagos y picos nevados. Cada cumbre alcanzada ofrece vistas que te dejarán sin aliento. Ya sea en invierno para disfrutar del esquí o en verano para practicar senderismo, la montaña es el lugar perfecto para la aventura, el desafío y la conexión con la naturaleza. ¿Te atreves a subir?"
+msgstr "If you're a nature lover and enjoy the fresh air of the heights, the mountains await you with their breathtaking landscapes, hiking trails, and winter sports. Discover trails surrounded by forests, lakes, and snow-capped peaks. Each summit reached offers views that will leave you breathless. Whether in winter for skiing or in summer for hiking, the mountains are the perfect place for adventure, challenge, and connection with nature. Are you ready to climb?"
+
+msgid "Crucero"
+msgstr "Cruise"
+
+msgid "Embárcate en un crucero de lujo y deja que el océano sea tu hogar mientras exploras destinos exóticos. Relájate en el lujo de un barco flotante, disfruta de espectáculos en vivo, gastronomía exquisita y actividades para toda la familia mientras cruzas mares cristalinos. Desde el Caribe hasta el Mediterráneo, cada puerto es una nueva oportunidad para conocer culturas vibrantes y paisajes asombrosos. ¿Te imaginas disfrutando del atardecer en medio del mar?"
+msgstr "Embark on a luxury cruise and let the ocean be your home while exploring exotic destinations. Relax in the luxury of a floating ship, enjoy live shows, exquisite gastronomy, and activities for the whole family while crossing crystal-clear seas. From the Caribbean to the Mediterranean, each port is a new opportunity to discover vibrant cultures and stunning landscapes. Can you imagine enjoying the sunset in the middle of the sea?"
+
+msgid "Balneario"
+msgstr "Spa"
+
+msgid "Escápate al bienestar y la relajación total en los mejores balnearios del mundo. En estos destinos de paz y serenidad, podrás disfrutar de tratamientos de spa, baños termales y masajes rejuvenecedores rodeados de naturaleza. Ya sea en una isla tropical, una ciudad termal europea o un retiro en la montaña, los balnearios son el lugar perfecto para desconectar, renovar energías y encontrar el equilibrio. ¿Estás listo para tu descanso perfecto?"
+msgstr "Escape to wellness and total relaxation in the best spas in the world. In these destinations of peace and serenity, you can enjoy spa treatments, thermal baths, and rejuvenating massages surrounded by nature. Whether on a tropical island, a charming European city, or a mountain retreat, spas are the perfect place to disconnect, renew your energy, and find balance. Are you ready for your perfect rest?"
+
+msgid "Aventura"
+msgstr "Adventure"
+
+msgid "Si lo tuyo es la emoción y la aventura, nuestros destinos te ofrecen experiencias únicas para vivir a todo ritmo. Desde el rafting en ríos salvajes y el trekking por paisajes indómitos, hasta el buceo en arrecifes de coral y la escalada en montañas imponentes, aquí encontrarás actividades para liberar tu adrenalina y desafiar tus propios límites. Atrévete a hacer el viaje de tu vida, lleno de acción y nuevas experiencias. ¿Estás listo para vivir la aventura?"
+msgstr "If you're all about excitement and adventure, our destinations offer unique experiences to live at full pace. From rafting in wild rivers and trekking through untamed landscapes to diving in coral reefs and climbing majestic mountains, here you'll find activities to unleash your adrenaline and challenge your limits. Dare to take the trip of your life, full of action and new experiences. Are you ready to live the adventure?"
+
+msgid "Nueva Zelanda"
+msgstr "New Zeland"
+
+msgid "Oceanía"
+msgstr "Oceania"
+
+msgid "Con paisajes de otro mundo que han sido el escenario de películas icónicas, Nueva Zelanda es el destino ideal para los amantes de la naturaleza y la adrenalina. Desde las majestuosas montañas de los Alpes del Sur y los lagos turquesa de la Isla Sur, hasta las playas doradas y los exuberantes bosques de la Isla Norte, cada rincón de este país es un paraíso de diversidad natural. Aventúrate en el Parque Nacional Fiordland, contempla los glaciares milenarios, o sumérgete en la rica cultura maorí. Nueva Zelanda ofrece experiencias únicas para quienes buscan belleza, aventura y un toque de magia. ¿Te atreves a explorar este destino de ensueño?"
+msgstr "With otherworldly landscapes that have served as the backdrop for iconic films, New Zealand is the perfect destination for nature and adrenaline lovers. From the majestic Southern Alps and turquoise lakes of the South Island to the golden beaches and lush forests of the North Island, every corner of this country is a paradise of natural diversity. Venture into Fiordland National Park, marvel at ancient glaciers, or immerse yourself in the rich Maori culture. New Zealand offers unique experiences for those seeking beauty, adventure, and a touch of magic. Are you ready to explore this dream destination?"
+
+msgid "Namibia"
+msgstr "Namibia"
+
+msgid "Un país de vastos paisajes y maravillas naturales que te dejarán sin aliento. Desde las dunas rojas de Sossusvlei, algunas de las más altas del mundo, hasta el misterioso desierto del Namib, que se encuentra con el océano Atlántico en una danza única de arena y agua. Namibia es el destino perfecto para los amantes de la naturaleza salvaje y la tranquilidad. Vive la emoción de un safari en el Parque Nacional Etosha, hogar de una abundante fauna, o contempla el cielo estrellado en el corazón de la nada. Namibia te ofrece aventuras auténticas, escenarios impresionantes y una cultura rica y acogedora. ¿Listo para descubrir el espíritu indomable de Namibia?"
+msgstr "A country of vast landscapes and natural wonders that will take your breath away. From the red dunes of Sossusvlei, some of the tallest in the world, to the mysterious Namib Desert, where it meets the Atlantic Ocean in a unique dance of sand and water. Namibia is the perfect destination for lovers of wild nature and tranquility. Experience the thrill of a safari in Etosha National Park, home to abundant wildlife, or gaze at the starry skies in the heart of nowhere. Namibia offers authentic adventures, stunning scenery, and a rich, welcoming culture. Are you ready to discover the untamed spirit of Namibia?"
+
+msgid "África"
+msgstr "Africa"
+
+msgid "Maldivas"
+msgstr "Maldives"
+
+msgid "Asia"
+msgstr "Asia"
+
+msgid "Imagina despertar rodeado de aguas cristalinas y playas de arena blanca que parecen sacadas de un sueño. En este destino exclusivo, cada isla es una joya donde el tiempo se detiene, y el estrés se disuelve con cada suave ola. Descubre el fascinante mundo submarino, repleto de corales y vida marina vibrante, o relájate en un bungalow sobre el agua con vistas infinitas al océano turquesa. Las Maldivas son el destino perfecto para quienes buscan lujo, tranquilidad y belleza natural en estado puro. ¿Estás listo para sumergirte en este rincón paradisíaco del mundo?"
+msgstr "Imagine waking up surrounded by crystal-clear waters and white sandy beaches that seem straight out of a dream. In this exclusive destination, each island is a gem where time stands still, and stress melts away with every gentle wave. Discover the fascinating underwater world, teeming with vibrant coral reefs and marine life, or unwind in an overwater bungalow with endless views of the turquoise ocean. The Maldives is the perfect destination for those seeking luxury, tranquility, and pure natural beauty. Are you ready to dive into this paradise on Earth?"
+
+msgid "España"
+msgstr "Spain"
+
+msgid "Desde las soleadas playas de la Costa del Sol hasta los majestuosos picos de los Pirineos, España ofrece una variedad de paisajes y experiencias que te dejarán sin aliento. Explora ciudades vibrantes como Madrid y Barcelona, llenas de arte, cultura y una gastronomía que cautiva hasta al paladar más exigente. Piérdete en los rincones históricos de Andalucía, con sus callejones llenos de encanto, o recorre los viñedos de La Rioja y saborea los vinos más reconocidos a nivel mundial. España es un destino donde la tradición y la modernidad se mezclan para ofrecerte una experiencia inolvidable. ¿Estás listo para vivir España como nunca antes?"
+msgstr "From the sunny beaches of the Costa del Sol to the majestic peaks of the Pyrenees, Spain offers a variety of landscapes and experiences that will take your breath away. Explore vibrant cities like Madrid and Barcelona, brimming with art, culture, and cuisine that captivates even the most discerning palate. Get lost in the historic corners of Andalusia, with its charming alleyways, or tour the vineyards of La Rioja and savor some of the world’s most renowned wines. Spain is a destination where tradition and modernity blend to offer you an unforgettable experience. Are you ready to experience Spain like never before?"
+
+msgid "Europa"
+msgstr "Europe"
+
+msgid "Chile"
+msgstr "Chile"
+
+msgid "Desde el árido desierto de Atacama en el norte, el más seco del mundo, hasta los glaciares y fiordos de la Patagonia en el sur, Chile es un destino que sorprende a cada paso. Explora el encanto colorido de Valparaíso, sumérgete en la historia de Santiago, o disfruta de los reconocidos vinos del Valle de Colchagua. Para los amantes de la naturaleza, Torres del Paine ofrece una de las rutas de senderismo más espectaculares del planeta, mientras que la misteriosa Isla de Pascua y sus moáis invitan a descubrir uno de los enigmas más fascinantes de la humanidad. Chile te espera con aventuras, cultura, y una belleza natural que no encontrarás en ningún otro lugar. ¿Estás listo para vivir Chile?"
+msgstr "From the arid Atacama Desert in the north, the driest in the world, to the glaciers and fjords of Patagonia in the south, Chile is a destination that amazes at every turn. Explore the colorful charm of Valparaíso, dive into the history of Santiago, or savor the renowned wines of the Colchagua Valley. For nature lovers, Torres del Paine offers one of the most spectacular hiking trails on the planet, while the mysterious Easter Island and its moai invite you to uncover one of humanity’s most fascinating enigmas. Chile awaits with adventures, culture, and natural beauty like nowhere else. Are you ready to experience Chile?"
+
+msgid "América"
+msgstr "America"
+
+msgid "Brasil"
+msgstr "Brazil"
+
+msgid "Desde las playas doradas de Copacabana y las imponentes vistas del Cristo Redentor en Río de Janeiro, hasta la vibrante selva amazónica y sus misterios, Brasil es un país lleno de color, vida y diversidad. Sumérgete en la cultura cálida y festiva de sus gentes, disfruta de la rica gastronomía brasileña, y déjate llevar por el ritmo de la música en cada rincón. Los impresionantes paisajes de Iguazú, el pantanal lleno de vida silvestre, y las dunas de arena blanca en el nordeste son solo algunos de los tesoros que este país tiene para ofrecer. ¿Estás listo para descubrir Brasil y vivir una aventura inolvidable?"
+msgstr "From the golden beaches of Copacabana and the majestic views of Christ the Redeemer in Rio de Janeiro to the vibrant Amazon rainforest and its mysteries, Brazil is a country full of color, life, and diversity. Immerse yourself in the warm, festive culture of its people, savor the rich Brazilian cuisine, and let the rhythm of the music carry you in every corner. The breathtaking landscapes of Iguazu Falls, the wildlife-rich Pantanal, and the white sand dunes in the northeast are just some of the treasures this country has to offer. Are you ready to discover Brazil and embark on an unforgettable adventure?"
+
+msgid "Escapada Relajante en el Balneario La Serena"
+msgstr "Relaxing Getaway at La Serena Spa"
+
+msgid "Escápate a un oasis de tranquilidad en el corazón de la naturaleza. El Balneario La Serena, ubicado en un entorno privilegiado en la provincia de Salamanca, te invita a vivir una experiencia única de bienestar y relajación. Disfruta de nuestros exclusivos tratamientos termales, baños de vapor, masajes revitalizantes y terapias de aguas minerales, todo mientras te sumerges en la paz y serenidad que solo un balneario de lujo puede ofrecer. Completa tu experiencia con una deliciosa gastronomía saludable en nuestro restaurante con vistas al paisaje. Incluye: 2 noches de alojamiento en habitación doble superior, acceso ilimitado a las instalaciones del spa (piscina termal, sauna, baño turco), 1 masaje relajante de 60 minutos, 1 tratamiento facial hidratante y desayuno buffet diario."
+msgstr "Escape to an oasis of tranquility in the heart of nature. La Serena Spa, located in a privileged setting in the province of Salamanca, invites you to enjoy a unique experience of wellness and relaxation. Indulge in our exclusive thermal treatments, steam baths, revitalizing massages, and mineral water therapies, all while immersing yourself in the peace and serenity that only a luxury spa can provide. Complete your experience with delicious healthy cuisine at our restaurant with scenic views. Includes: 2 nights of accommodation in a superior double room, unlimited access to spa facilities (thermal pool, sauna, Turkish bath), a 60-minute relaxing massage, a hydrating facial treatment, and a daily buffet breakfast."
+
+msgid "Aventura Extrema en el Desierto de Atacama"
+msgstr "Extreme Adventure in the Atacama Desert"
+
+msgid "¡Prepárate para la aventura de tu vida en uno de los desiertos más fascinantes del mundo! Te invitamos a descubrir el Desierto de Atacama con una experiencia única llena de adrenalina y paisajes impresionantes. Disfruta de un trekking por las dunas más altas, practica sandboarding en el Valle de la Luna y explora los géiseres del Tatio al amanecer. Este viaje también incluye una visita a las lagunas altiplánicas, donde podrás maravillarte con la fauna local y los paisajes surrealistas. Si eres un amante de la aventura y la naturaleza, esta es la oportunidad perfecta para explorar el corazón de Chile. Incluye: 4 días de tour por el Desierto de Atacama con guía especializado, trekking por el Valle de la Luna y las dunas de arena, actividad de sandboarding en las dunas del desierto, excursión al Geyser del Tatio al amanecer, visita a las Lagunas Altiplánicas y avistamiento de fauna local, alojamiento en hotel 3 estrellas, transporte en 4x4 durante todo el recorrido y almuerzos y cenas tradicionales."
+msgstr "Get ready for the adventure of a lifetime in one of the most fascinating deserts in the world! We invite you to discover the Atacama Desert with a unique experience full of adrenaline and breathtaking landscapes. Enjoy trekking across the highest dunes, practice sandboarding in the Valley of the Moon, and explore the Tatio Geysers at sunrise. This journey also includes a visit to the highland lagoons, where you can marvel at the local wildlife and surreal landscapes. If you are a lover of adventure and nature, this is the perfect opportunity to explore the heart of Chile. Includes: 4 days of touring the Atacama Desert with a specialized guide, trekking through the Valley of the Moon and sand dunes, sandboarding activities in the desert dunes, an excursion to the Tatio Geysers at sunrise, a visit to the highland lagoons with wildlife spotting, accommodation in a 3-star hotel, 4x4 transportation throughout the tour, and traditional lunches and dinners."
+
+msgid "Escapada Tropical a las Playas de Bahía"
+msgstr "Tropical Getaway to the Beaches of Bahia"
+
+msgid "Vive el paraíso en las famosas Playas de Bahía, en Brasil. Disfruta del sol, la arena dorada y el mar turquesa en un destino idóneo para los amantes de las playas más paradisíacas. Acomódate en un resort frente al mar, donde podrás relajarte en sus cómodas tumbonas, nadar en las aguas cristalinas y disfrutar de las mejores actividades acuáticas. Además, tendrás la oportunidad de descubrir la vibrante cultura de Salvador de Bahía, famosa por su música, danza y gastronomía. ¡La combinación perfecta de relax y diversión! Incluye: 5 noches de alojamiento en resort 4 estrellas frente a la playa, acceso a actividades acuáticas: snorkel, kayak y paseo en barco, desayuno buffet diario y cena típica bahiana, excursión cultural por Salvador de Bahía, incluyendo visita al Pelourinho y a la Iglesia de Bonfim y traslados desde y hacia el aeropuerto."
+msgstr "Experience paradise on the famous beaches of Bahia, Brazil. Enjoy the sun, golden sands, and turquoise waters in a destination perfect for lovers of the most idyllic beaches. Stay at a beachfront resort where you can unwind on comfortable loungers, swim in crystal-clear waters, and take part in the best water activities. Additionally, you’ll have the chance to explore the vibrant culture of Salvador de Bahia, renowned for its music, dance, and cuisine. The perfect combination of relaxation and fun! Includes: 5 nights of accommodation at a 4-star beachfront resort, access to water activities such as snorkeling, kayaking, and boat tours, daily buffet breakfast and a traditional Bahian dinner, a cultural excursion in Salvador de Bahia (including visits to Pelourinho and the Bonfim Church), and round-trip airport transfers."
+
+msgid "Escapada de Ensueño en las Islas Maldivas"
+msgstr "Dream Getaway to the Maldives"
+
+msgid "Déjate seducir por las aguas cristalinas, las arenas blancas y los paisajes más paradisíacos en las Islas Maldivas, el destino de lujo perfecto para una escapada única. Disfruta de la tranquilidad en un resort sobre el agua, con vistas espectaculares al océano Índico. Relájate en una playa privada, haz snorkel entre los arrecifes de coral o simplemente sumérgete en el lujo de un spa exclusivo. Las Maldivas te esperan con su exotismo, exclusividad y belleza natural, garantizando una experiencia inolvidable de sol y mar. Incluye: 7 noches de alojamiento en una villa privada sobre el agua, desayuno buffet y cenas gourmet bajo las estrellas, actividades acuáticas incluidas: snorkel, paddleboarding, y paseo en barco con fondo de cristal, tratamiento de spa de 60 minutos para dos personas y traslados en hidroavión desde el aeropuerto de Malé."
+msgstr "Let yourself be enchanted by crystal-clear waters, white sands, and the most idyllic landscapes in the Maldives, the ultimate luxury destination for a one-of-a-kind escape. Enjoy tranquility at an overwater resort with spectacular views of the Indian Ocean. Unwind on a private beach, snorkel among coral reefs, or indulge in the luxury of an exclusive spa. The Maldives awaits you with its exotic charm, exclusivity, and natural beauty, promising an unforgettable experience of sun and sea. Includes: 7 nights of accommodation in a private overwater villa, buffet breakfasts and gourmet dinners under the stars, included water activities: snorkeling, paddleboarding, and a glass-bottom boat ride, a 60-minute spa treatment for two, and seaplane transfers from Malé Airport."
+
+msgid "Crucero por la Costa de Namibia y las Islas de los Esqueletos"
+msgstr "Cruise Along Namibia's Coast and the Skeleton Islands"
+
+msgid "Embárcate en un crucero exclusivo por la costa de Namibia y descubre una de las regiones más remotas y fascinantes del mundo. Navega por las aguas del Atlántico Sur y disfruta de vistas panorámicas de la imponente Costa de los Esqueletos, famosa por sus paisajes desérticos y restos de naufragios. Explora las islas deshabitadas, avista fauna salvaje como focas y delfines, y disfruta de las excursiones a las dunas de Sossusvlei o el Parque Nacional de Namib-Naukluft. Con un itinerario lleno de experiencias únicas, este crucero promete una aventura inolvidable. Incluye: 7 noches a bordo de un barco de lujo con todas las comodidades, excursiones a las islas deshabitadas y la Costa de los Esqueletos, visitas guiadas a Sossusvlei y el Parque Nacional de Namib-Naukluft, avistamiento de fauna local (focas, delfines, aves marinas), actividades a bordo: cenas temáticas, espectáculos nocturnos, y relajación en el spa y pensión completa durante todo el recorrido."
+msgstr "Embark on an exclusive cruise along Namibia’s coast and discover one of the most remote and fascinating regions in the world. Sail the waters of the South Atlantic and enjoy panoramic views of the majestic Skeleton Coast, renowned for its desert landscapes and shipwreck remains. Explore uninhabited islands, spot wildlife such as seals and dolphins, and take excursions to the Sossusvlei dunes or Namib-Naukluft National Park. With an itinerary filled with unique experiences, this cruise promises an unforgettable adventure.  Includes: 7 nights aboard a luxury ship with all amenities, excursions to uninhabited islands and the Skeleton Coast, guided visits to Sossusvlei and Namib-Naukluft National Park, wildlife spotting (seals, dolphins, seabirds), onboard activities such as themed dinners, evening shows, spa relaxation, and full board throughout the journey."
+
+msgid "Aventura en las Montañas de Nueva Zelanda"
+msgstr "Adventure in the Mountains of New Zealand"
+
+msgid "Embárcate en una aventura en las montañas de Nueva Zelanda, un destino mundialmente conocido por sus paisajes montañosos, lagos cristalinos y vistas impresionantes. Durante 8 días explorarás las montañas de los Alpes del Sur, donde podrás hacer senderismo en el famoso Fiordo de Milford, desafiarte en el trekking de Tongariro Crossing, y descubrir la belleza del Monte Cook. Además, disfrutarás de actividades al aire libre como el kayak en el Lago Wanaka y el rafting en los ríos de montaña. Si eres un amante de la naturaleza y las aventuras al aire libre, Nueva Zelanda te ofrece la experiencia perfecta. Incluye: 7 noches de alojamiento en lodges de montaña y cabañas ecológicas, excursión guiada al Tongariro Crossing, senderismo en el Fiordo de Milford y el Monte Cook, kayak en el Lago Wanaka y rafting en ríos de montaña, traslados en autobús por todo el recorrido y transporte en 4x4 y desayuno y cenas tradicionales neozelandesas durante el viaje."
+msgstr "Embark on an adventure in the mountains of New Zealand, a world-renowned destination for its mountainous landscapes, crystal-clear lakes, and breathtaking views. Over 8 days, you’ll explore the Southern Alps, where you can hike the famous Milford Sound, challenge yourself on the Tongariro Crossing trek, and discover the beauty of Mount Cook. Additionally, you’ll enjoy outdoor activities such as kayaking on Lake Wanaka and rafting on mountain rivers. If you’re a lover of nature and outdoor adventures, New Zealand offers the perfect experience. Includes: 7 nights of accommodation in mountain lodges and eco-cabins, guided excursion to the Tongariro Crossing, hiking in Milford Sound and Mount Cook, kayaking on Lake Wanaka, mountain river rafting, bus transfers throughout the journey, 4x4 transportation, and traditional New Zealand breakfasts and dinners during the trip."

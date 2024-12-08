@@ -1,39 +1,60 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load i18n %} <!-- Cargar etiquetas de traducción -->
 
-{% block title %}{{ pais.nombre }}{% endblock %}
+{% block title %}
+    {% trans pais.nombre %}
+{% endblock %}
 
 {% block content %}
 <div class="container my-5">
     <!-- Country Title, Image, and Description Section -->
     <div class="card shadow-sm mb-4">
         {% if pais.image %}
-            <img src="{% static pais.image.name %}" alt="{{ pais.nombre }}" class="card-img-top img-fluid rounded-top">
+            <img src="{% static pais.image.name %}" alt="{% trans pais.nombre %}" class="card-img-top img-fluid rounded-top">
         {% endif %}
         <div class="card-body">
-            <h1 class="card-title text-center text-primary">{{ pais.nombre }}</h1>
-            <p class="text-center text-muted"><strong>Continente:</strong> {{ pais.continente }}</p>
-            <p class="card-text">{{ pais.descripcion }}</p>
+            <h1 class="card-title text-center text-primary">
+                {% trans pais.nombre %}
+            </h1>
+            <p class="text-center text-muted">
+                <strong>{% blocktrans %}Continente:{% endblocktrans %}</strong>
+                {% trans pais.continente %}
+            </p>
+            <p class="card-text">
+                {% trans pais.descripcion %}
+            </p>
         </div>
     </div>
 
     <!-- Offers Section -->
     <div class="card shadow-sm">
         <div class="card-body">
-            <h2 class="card-title text-dark mb-3">Ofertas disponibles</h2>
+            <h2 class="card-title text-dark mb-3">
+                {% blocktrans %}Ofertas disponibles{% endblocktrans %}
+            </h2>
             <ul class="list-group list-group-flush">
                 {% for oferta in pais.ofertas.all %}
                     <li class="list-group-item">
-                        <h5 class="mb-1"><a href="{% url 'oferta' oferta.id_oferta %}" class="text-success">{{ oferta.nombre }}</a></h5>
-                        <p class="mb-1 text-muted">{{ oferta.descripcion }}</p>
+                        <h5 class="mb-1">
+                            <a href="{% url 'oferta' oferta.id_oferta %}" class="text-success">
+                                {% trans oferta.nombre %}
+                            </a>
+                        </h5>
+                        <p class="mb-1 text-muted">
+                            {% trans oferta.descripcion %}
+                        </p>
                         <small class="text-muted">
-                            <strong>Precio:</strong> ${{ oferta.precio }} - 
-                            <strong>Disponible:</strong> {{ oferta.disponible|yesno:"Sí,No" }}
+                            <strong>{% blocktrans %}Precio:{% endblocktrans %}</strong> ${{ oferta.precio }} - 
+                            <strong>{% blocktrans %}Disponible:{% endblocktrans %}</strong>
+                            {{ oferta.disponible|yesno:"{% blocktrans %}Sí{% endblocktrans %},{% blocktrans %}No{% endblocktrans %}" }}
                         </small>
                     </li>
                 {% empty %}
-                    <li class="list-group-item text-center text-muted">No hay ofertas disponibles para este país.</li>
+                    <li class="list-group-item text-center text-muted">
+                        {% blocktrans %}No hay ofertas disponibles para este país.{% endblocktrans %}
+                    </li>
                 {% endfor %}
             </ul>
         </div>

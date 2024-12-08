@@ -1,41 +1,52 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load i18n %} <!-- Cargar las etiquetas de traducción -->
 
-{% block title %}{{ oferta.nombre }}{% endblock %}
+{% block title %}
+    {% trans oferta.pais.nombre %}
+{% endblock %}
 
 {% block content %}
     <div class="container my-5">
         <!-- Country Title, Image, and Description Section -->
         <div class="card shadow-sm mb-4">
             {% if oferta.image %}
-                <img src="{% static oferta.image.name %}" alt="{{ oferta.nombre }}" class="card-img-top img-fluid rounded-top">
+                <img src="{% static oferta.image.name %}" alt="{% trans oferta.nombre %}" class="card-img-top img-fluid rounded-top">
             {% endif %}
             <div class="card-body">
-                <h1 class="card-title text-center text-primary">{{ oferta.nombre }}</h1>
-                <p class="card-text">{{ oferta.descripcion }}</p>
+                <h1 class="card-title text-center text-primary">
+                    {% trans oferta.nombre %}
+                </h1>
+                <p class="card-text">
+                    {% trans oferta.descripcion %}
+                </p>
 
                 <!-- Horizontal Layout for Details -->
                 <div class="d-flex flex-wrap justify-content-around text-center mt-4">
                     <div>
-                        <strong class="text-muted">Precio:</strong>
+                        <strong class="text-muted">{% blocktrans %}Precio:{% endblocktrans %}</strong>
                         <p>${{ oferta.precio }}</p>
                     </div>
                     <div>
-                        <strong class="text-muted">Fecha inicio:</strong>
+                        <strong class="text-muted">{% blocktrans %}Fecha inicio:{% endblocktrans %}</strong>
                         <p>{{ oferta.fecha_inicio }}</p>
                     </div>
                     <div>
-                        <strong class="text-muted">Fecha fin:</strong>
+                        <strong class="text-muted">{% blocktrans %}Fecha fin:{% endblocktrans %}</strong>
                         <p>{{ oferta.fecha_fin }}</p>
                     </div>
                     <div>
-                        <strong class="text-muted">País:</strong>
-                        <p class="mb-1"><a href="{% url 'pais' oferta.pais.nombre %}" class="text-success">{{ oferta.pais.nombre }}</a></p>
+                        <strong class="text-muted">{% blocktrans %}País:{% endblocktrans %}</strong>
+                        <p class="mb-1">
+                            <a href="{% url 'pais' oferta.pais.nombre %}" class="text-success">
+                                {% trans oferta.pais.nombre %}
+                            </a>
+                        </p>
                     </div>
                     <div>
-                        <strong class="text-muted">Disponible:</strong>
-                        <p>{{ oferta.disponible|yesno:"Sí,No" }}</p>
+                        <strong class="text-muted">{% blocktrans %}Disponible:{% endblocktrans %}</strong>
+                        <p>{{ oferta.disponible|yesno:"{% blocktrans %}Sí{% endblocktrans %},{% blocktrans %}No{% endblocktrans %}" }}</p>
                     </div>
                 </div>
             </div>
@@ -44,12 +55,20 @@
         <!-- Categories Section -->
         <div class="card shadow-sm">
             <div class="card-body">
-                <h2 class="card-title text-dark mb-3">Categorías</h2>
+                <h2 class="card-title text-dark mb-3">
+                    {% blocktrans %}Categorías{% endblocktrans %}
+                </h2>
                 <ul class="list-group list-group-flush">
                     {% for categoria in oferta.categorias.all %}
                         <li class="list-group-item">
-                            <h5 class="mb-1"><a href="{% url 'categoria' categoria.nombre %}" class="text-success">{{ categoria.nombre }}</a></h5>
-                            <p class="mb-1 text-muted">{{ categoria.descripcion }}</p>
+                            <h5 class="mb-1">
+                                <a href="{% url 'categoria' categoria.nombre %}" class="text-success">
+                                    {% trans categoria.nombre %}
+                                </a>
+                            </h5>
+                            <p class="mb-1 text-muted">
+                                {% trans categoria.descripcion %}
+                            </p>
                         </li>
                     {% endfor %}
                 </ul>

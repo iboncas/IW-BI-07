@@ -3,11 +3,8 @@ from .models import Pais, Categoria, Oferta
 from django.core.mail import send_mail
 from django.conf import settings
 from django.http import HttpResponse
+from django.utils.translation import gettext as _
 from django.views.generic import TemplateView, ListView, DetailView
-from django.views.generic.edit import FormView
-from django import forms
-from django.core.mail import send_mail
-from django.conf import settings
 
 # Landing
 class LandingView(TemplateView):
@@ -21,6 +18,8 @@ class LandingView(TemplateView):
             barata = Oferta.objects.filter(pais=pais, disponible=True).order_by('precio').first()
             if barata:
                 baratas.append(barata)
+        # Traducción del título para las ofertas más baratas
+        context['titulo_ofertas'] = _("Ofertas más baratas")
         context['ofertas_mas_baratas'] = baratas
         return context
 
@@ -30,11 +29,23 @@ class OfertasView(ListView):
     template_name = 'ofertas.html'
     context_object_name = 'ofertas'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Traducción del título para la lista de ofertas
+        context['titulo_ofertas'] = _("Todas las ofertas")
+        return context
+
 # Info de oferta
 class OfertaView(DetailView):
     model = Oferta
     template_name = 'oferta.html'
     context_object_name = 'oferta'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Traducción del título de la página de detalle de oferta
+        context['titulo_oferta'] = _("Detalles de la oferta")
+        return context
 
 # Todos los países
 class PaisesView(ListView):
@@ -42,11 +53,23 @@ class PaisesView(ListView):
     template_name = 'paises.html'
     context_object_name = 'paises'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Traducción del título para la lista de países
+        context['titulo_paises'] = _("Todos los países")
+        return context
+
 # Info de país
 class PaisView(DetailView):
     model = Pais
     template_name = 'pais.html'
     context_object_name = 'pais'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Traducción del título para los detalles de país
+        context['titulo_pais'] = _("Detalles del país")
+        return context
 
 # Todas las categorías
 class CategoriasView(ListView):
@@ -54,31 +77,37 @@ class CategoriasView(ListView):
     template_name = 'categorias.html'
     context_object_name = 'categorias'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Traducción del título para la lista de categorías
+        context['titulo_categorias'] = _("Todas las categorías")
+        return context
+
 # Info de categoría
 class CategoriaView(DetailView):
     model = Categoria
     template_name = 'categoria.html'
     context_object_name = 'categoria'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Traducción del título para los detalles de categoría
+        context['titulo_categoria'] = _("Detalles de la categoría")
+        return context
+
 # Sobre Nosotros
 class AboutUsView(TemplateView):
     template_name = "aboutus.html"
 
-# Definimos el formulario
-class ContactForm(forms.Form):
-    nombre = forms.CharField(max_length=100, required=True, label="Nombre")
-    email = forms.EmailField(required=True, label="Email")
-    titulo = forms.CharField(max_length=100, required=True, label="Título")
-    mensaje = forms.CharField(widget=forms.Textarea, required=True, label="Mensaje")
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Traducción del título para la página Sobre Nosotros
+        context['titulo_sobre_nosotros'] = _("Sobre Nosotros")
+        return context
 
 # Contacto
-class ContactoView(FormView):
-    template_name = 'contacto.html'
-    form_class = ContactForm
-    success_url = '/contacto/'
-
-    def form_valid(self, form):
-        return super().form_valid(form)
-
-    def form_invalid(self, form):
-        return super().form_invalid(form)
+def contacto(request):
+    context = {
+        'titulo_contacto': _("Contáctanos"),
+    }
+    return render(request, 'contacto.html', context)

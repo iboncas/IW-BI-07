@@ -1,12 +1,17 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load i18n %} <!-- Cargar etiquetas de traducción -->
 
-{% block title %}Categorías de Viaje{% endblock %}
+{% block title %}
+    {% blocktrans %}Categorías de Viaje{% endblocktrans %}
+{% endblock %}
 
 {% block content %}
 <div class="container my-5">
-    <h1 class="text-center mb-4">Categorías de Viaje</h1>
+    <h1 class="text-center mb-4">
+        {% blocktrans %}Categorías de Viaje{% endblocktrans %}
+    </h1>
     <ul class="list-unstyled">
         {% for categoria in categorias %}
             <li class="mb-4">
@@ -18,9 +23,13 @@
                     </div>
                     <div class="col-md-9">
                         <h3 class="mb-1">
-                            <a href="{% url 'categoria' categoria.nombre %}" class="text-primary">{{ categoria.nombre }}</a>
+                            <a href="{% url 'categoria' categoria.nombre %}" class="text-primary">
+                                {% trans categoria.nombre %}
+                            </a>
                         </h3>
-                        <p class="text-muted">{{ categoria.descripcion }}</p>
+                        <p class="text-muted">
+                            {% trans categoria.descripcion %}
+                        </p>
                     </div>
                 </div>
             </li>

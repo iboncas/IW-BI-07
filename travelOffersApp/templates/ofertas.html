@@ -1,24 +1,33 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load i18n %} <!-- Cargar las etiquetas de traducción -->
 
-{% block title %}Ofertas de Viaje{% endblock %}
+{% block title %}
+    {% blocktrans %}Ofertas de Viaje{% endblocktrans %}
+{% endblock %}
 
 {% block content %}
     <div class="container my-5">
-        <h1 class="text-center mb-4">Ofertas de viaje</h1>
+        <h1 class="text-center mb-4">
+            {% blocktrans %}Ofertas de viaje{% endblocktrans %}
+        </h1>
         <ul class="list-unstyled">
             {% for oferta in ofertas %}
                 <li class="mb-4">
                     <div class="row align-items-center">
                         <div class="col-md-3">
-                            <img alt="{{ oferta.image.name }}" src="{% static oferta.image.name %}" class="img-fluid rounded">
+                            <img alt="{% trans oferta.image.name %}" src="{% static oferta.image.name %}" class="img-fluid rounded">
                         </div>
                         <div class="col-md-9">
                             <h3 class="mb-1">
-                                <a href="{% url 'oferta' oferta.id_oferta %}" class="text-primary">{{ oferta.nombre }}</a>
+                                <a href="{% url 'oferta' oferta.id_oferta %}" class="text-primary">
+                                    {% trans oferta.nombre %}
+                                </a>
                             </h3>
-                            <p class="text-muted">{{ oferta.descripcion }}</p>
+                            <p class="text-muted">
+                                {% trans oferta.descripcion %}
+                            </p>
                         </div>
                     </div>
                 </li>

@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load i18n %} <!-- Cargar etiquetas de traducción -->
 
-{% block title %}Travel Offers{% endblock %}
+{% block title %}
+    {% blocktrans %}Travel Offers{% endblocktrans %}
+{% endblock %}
 
 {% block content %}
 
@@ -11,20 +14,28 @@
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="w-100" src="../static/img/carousel-1.jpg" alt="Image">
+                <img class="w-100" src="../static/img/carousel-1.jpg" alt="{% blocktrans %}Image{% endblocktrans %}">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase mb-md-3">Tours y Viajes</h4>
-                        <h1 class="display-3 text-white mb-md-4">Descubramos el mundo juntos</h1>
+                        <h4 class="text-white text-uppercase mb-md-3">
+                            {% blocktrans %}Tours y Viajes{% endblocktrans %}
+                        </h4>
+                        <h1 class="display-3 text-white mb-md-4">
+                            {% blocktrans %}Descubramos el mundo juntos{% endblocktrans %}
+                        </h1>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="w-100" src="../static/img/carousel-2.jpg" alt="Image">
+                <img class="w-100" src="../static/img/carousel-2.jpg" alt="{% blocktrans %}Image{% endblocktrans %}">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase mb-md-3">Tours y Viajes</h4>
-                        <h1 class="display-3 text-white mb-md-4">Encuentra lugares asombrosos</h1>
+                        <h4 class="text-white text-uppercase mb-md-3">
+                            {% blocktrans %}Tours y Viajes{% endblocktrans %}
+                        </h4>
+                        <h1 class="display-3 text-white mb-md-4">
+                            {% blocktrans %}Encuentra lugares asombrosos{% endblocktrans %}
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -47,29 +58,45 @@
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
         <div class="text-center mb-3 pb-3">
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Servicios</h6>
-            <h1>Servicios de Tours y Viajes</h1>
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">
+                {% blocktrans %}Servicios{% endblocktrans %}
+            </h6>
+            <h1>
+                {% blocktrans %}Servicios de Tours y Viajes{% endblocktrans %}
+            </h1>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="service-item bg-white text-center mb-2 py-5 px-4">
                     <i class="fa fa-2x fa-route mx-auto mb-4"></i>
-                    <h5 class="mb-2">Guía de Viaje</h5>
-                    <p class="m-0">Descubre destinos únicos con la orientación experta de nuestros guías locales</p>
+                    <h5 class="mb-2">
+                        {% blocktrans %}Guía de Viaje{% endblocktrans %}
+                    </h5>
+                    <p class="m-0">
+                        {% blocktrans %}Descubre destinos únicos con la orientación experta de nuestros guías locales{% endblocktrans %}
+                    </p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="service-item bg-white text-center mb-2 py-5 px-4">
                     <i class="fa fa-2x fa-ticket-alt mx-auto mb-4"></i>
-                    <h5 class="mb-2">Reserva de Tickets</h5>
-                    <p class="m-0">Compra tus tickets de manera fácil y rápida para tus próximos viajes</p>
+                    <h5 class="mb-2">
+                        {% blocktrans %}Reserva de Tickets{% endblocktrans %}
+                    </h5>
+                    <p class="m-0">
+                        {% blocktrans %}Compra tus tickets de manera fácil y rápida para tus próximos viajes{% endblocktrans %}
+                    </p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="service-item bg-white text-center mb-2 py-5 px-4">
                     <i class="fa fa-2x fa-hotel mx-auto mb-4"></i>
-                    <h5 class="mb-2">Reserva de Hoteles</h5>
-                    <p class="m-0">Reserva el hotel ideal para tu estadía y disfruta de una experiencia cómoda y memorable</p>
+                    <h5 class="mb-2">
+                        {% blocktrans %}Reserva de Hoteles{% endblocktrans %}
+                    </h5>
+                    <p class="m-0">
+                        {% blocktrans %}Reserva el hotel ideal para tu estadía y disfruta de una experiencia cómoda y memorable{% endblocktrans %}
+                    </p>
                 </div>
             </div>
         </div>
@@ -81,19 +108,27 @@
 <div class="container-fluid py-5">
     <div class="container pt-5 pb-3">
         <div class="text-center mb-3 pb-3">
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Ofertas</h6>
-            <h1>Ofertas más económicas por país</h1>
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">
+                {% blocktrans %}Ofertas{% endblocktrans %}
+            </h6>
+            <h1>
+                {% blocktrans %}Ofertas más económicas por país{% endblocktrans %}
+            </h1>
         </div>
         <div class="row">
             {% for oferta in ofertas_mas_baratas %}
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="offer-item bg-light text-center mb-2 p-4">
-                    <h5 class="mb-2">{{ oferta.nombre }}</h5>
-                    <img alt="{{ oferta.pais.image.name }}" src="{% static oferta.pais.image.name %}" class="img-fluid">
-                    <p class="mt-2"><strong>Precio:</strong> ${{ oferta.precio }}</p>
-                    <p><strong>País:</strong> {{ oferta.pais.nombre }}</p>
-                    <p><strong>Fecha:</strong> {{ oferta.fecha_inicio }} - {{ oferta.fecha_fin }}</p>
-                    <a href="{% url 'oferta' oferta.id_oferta %}" class="btn btn-primary mt-3">Ver Oferta</a>
+                    <h5 class="mb-2">
+                        {% trans oferta.nombre %}
+                    </h5>
+                    <img alt="{% trans oferta.pais.nombre %}" src="{% static oferta.pais.image.name %}" class="img-fluid">
+                    <p class="mt-2"><strong>{% blocktrans %}Precio:{% endblocktrans %}</strong> ${{ oferta.precio }}</p>
+                    <p><strong>{% blocktrans %}País:{% endblocktrans %}</strong> {% trans oferta.pais.nombre %}</p>
+                    <p><strong>{% blocktrans %}Fecha:{% endblocktrans %}</strong> {{ oferta.fecha_inicio }} - {{ oferta.fecha_fin }}</p>
+                    <a href="{% url 'oferta' oferta.id_oferta %}" class="btn btn-primary mt-3">
+                        {% blocktrans %}Ver Oferta{% endblocktrans %}
+                    </a>
                 </div>
             </div>
             {% endfor %}

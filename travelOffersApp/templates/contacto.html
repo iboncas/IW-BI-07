@@ -1,17 +1,29 @@
-{% extends "base.html" %}\
+{% extends "base.html" %}
 
-{% block title %}Contacto{% endblock %}
+{% load i18n %} <!-- Cargar las etiquetas de traducción -->
+
+{% block title %}
+    {% blocktrans %}Contacto{% endblocktrans %}
+{% endblock %}
 
 {% block content %}
 <!--Header Start-->
 <div class="container-fluid page-header">
     <div class="container">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
-            <h3 class="display-4 text-white text-uppercase">Contacto</h3>
+            <h3 class="display-4 text-white text-uppercase">
+                {% blocktrans %}Contacto{% endblocktrans %}
+            </h3>
             <div class="d-inline-flex text-white">
-                <p class="m-0 text-uppercase"><a class="text-white" href="{% url 'landing' %}">Home</a></p>
+                <p class="m-0 text-uppercase">
+                    <a class="text-white" href="{% url 'landing' %}">
+                        {% blocktrans %}Home{% endblocktrans %}
+                    </a>
+                </p>
                 <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                <p class="m-0 text-uppercase">Contacto</p>
+                <p class="m-0 text-uppercase">
+                    {% blocktrans %}Contacto{% endblocktrans %}
+                </p>
             </div>
         </div>
     </div>
@@ -22,8 +34,12 @@
 <div class="container-fluid py-5">
     <div class="container py-5">
         <div class="text-center mb-3 pb-3">
-            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Contacto</h6>
-            <h1>Contacta para cualquier duda</h1>
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">
+                {% blocktrans %}Contacto{% endblocktrans %}
+            </h6>
+            <h1>
+                {% blocktrans %}Contacta para cualquier duda{% endblocktrans %}
+            </h1>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -32,29 +48,31 @@
                     <form name="sentMessage" id="contactForm">
                         <div class="form-row">
                             <div class="control-group col-sm-6">
-                                <input type="text" class="form-control p-4" id="name" placeholder="Nombre"
-                                    required="required" data-validation-required-message="Por favor, introduce tu nombre">
+                                <input type="text" class="form-control p-4" id="name" placeholder="{% blocktrans %}Nombre{% endblocktrans %}"
+                                    required="required" data-validation-required-message="{% blocktrans %}Por favor, introduce tu nombre{% endblocktrans %}">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group col-sm-6">
-                                <input type="email" class="form-control p-4" id="email" placeholder="Email"
-                                    required="required" data-validation-required-message="Por favor, introduce tu email">
+                                <input type="email" class="form-control p-4" id="email" placeholder="{% blocktrans %}Email{% endblocktrans %}"
+                                    required="required" data-validation-required-message="{% blocktrans %}Por favor, introduce tu email{% endblocktrans %}">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control p-4" id="subject" placeholder="Titulo"
-                                required="required" data-validation-required-message="Por favor, introduce un titulo">
+                            <input type="text" class="form-control p-4" id="subject" placeholder="{% blocktrans %}Título{% endblocktrans %}"
+                                required="required" data-validation-required-message="{% blocktrans %}Por favor, introduce un título{% endblocktrans %}">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Mensaje"
+                            <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="{% blocktrans %}Mensaje{% endblocktrans %}"
                                 required="required"
-                                data-validation-required-message="Por favor, introduce tu mensaje"></textarea>
+                                data-validation-required-message="{% blocktrans %}Por favor, introduce tu mensaje{% endblocktrans %}"></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Enviar</button>
+                            <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">
+                                {% blocktrans %}Enviar{% endblocktrans %}
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -69,16 +87,20 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="successModalLabel">¡Enviado con éxito!</h5>
+                <h5 class="modal-title" id="successModalLabel">
+                    {% blocktrans %}¡Enviado con éxito!{% endblocktrans %}
+                </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Tu mensaje se ha enviado correctamente. Nos pondremos en contacto contigo pronto.
+                {% blocktrans %}Tu mensaje se ha enviado correctamente. Nos pondremos en contacto contigo pronto.{% endblocktrans %}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    {% blocktrans %}Cerrar{% endblocktrans %}
+                </button>
             </div>
         </div>
     </div>
@@ -93,4 +115,3 @@
     });
 </script>
 {% endblock %}
-

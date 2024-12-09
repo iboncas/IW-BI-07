@@ -531,3 +531,18 @@ msgstr "Adventure in the Mountains of New Zealand"
 
 msgid "Embárcate en una aventura en las montañas de Nueva Zelanda, un destino mundialmente conocido por sus paisajes montañosos, lagos cristalinos y vistas impresionantes. Durante 8 días explorarás las montañas de los Alpes del Sur, donde podrás hacer senderismo en el famoso Fiordo de Milford, desafiarte en el trekking de Tongariro Crossing, y descubrir la belleza del Monte Cook. Además, disfrutarás de actividades al aire libre como el kayak en el Lago Wanaka y el rafting en los ríos de montaña. Si eres un amante de la naturaleza y las aventuras al aire libre, Nueva Zelanda te ofrece la experiencia perfecta. Incluye: 7 noches de alojamiento en lodges de montaña y cabañas ecológicas, excursión guiada al Tongariro Crossing, senderismo en el Fiordo de Milford y el Monte Cook, kayak en el Lago Wanaka y rafting en ríos de montaña, traslados en autobús por todo el recorrido y transporte en 4x4 y desayuno y cenas tradicionales neozelandesas durante el viaje."
 msgstr "Embark on an adventure in the mountains of New Zealand, a world-renowned destination for its mountainous landscapes, crystal-clear lakes, and breathtaking views. Over 8 days, you’ll explore the Southern Alps, where you can hike the famous Milford Sound, challenge yourself on the Tongariro Crossing trek, and discover the beauty of Mount Cook. Additionally, you’ll enjoy outdoor activities such as kayaking on Lake Wanaka and rafting on mountain rivers. If you’re a lover of nature and outdoor adventures, New Zealand offers the perfect experience. Includes: 7 nights of accommodation in mountain lodges and eco-cabins, guided excursion to the Tongariro Crossing, hiking in Milford Sound and Mount Cook, kayaking on Lake Wanaka, mountain river rafting, bus transfers throughout the journey, 4x4 transportation, and traditional New Zealand breakfasts and dinners during the trip."
+
+msgid "Sí"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "Links Útiles"
+msgstr "Util Links"
+
+msgid "Síguenos"
+msgstr "Follow Us"
+
+msgid "Traveler - Tu compañero de aventuras Explora destinos increíbles y vive experiencias únicas. En Traveler, estamos aquí para ayudarte a planear el viaje de tus sueños y a descubrir rincones del mundo que nunca imaginaste."
+msgstr "Traveler - Your Adventure Companion. Explore amazing destinations and live unique experiences. At Traveler, we are here to help you plan the journey of your dreams and uncover corners of the world you never imagined."

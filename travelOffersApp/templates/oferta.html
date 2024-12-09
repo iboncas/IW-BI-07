@@ -46,7 +46,11 @@
                     </div>
                     <div>
                         <strong class="text-muted">{% blocktrans %}Disponible:{% endblocktrans %}</strong>
-                        <p>{{ oferta.disponible|yesno:"{% blocktrans %}Sí{% endblocktrans %},{% blocktrans %}No{% endblocktrans %}" }}</p>
+                        {% if oferta.disponible %}
+                            {% trans "Sí" %}
+                        {% else %}
+                            {% trans "No" %}
+                        {% endif %}
                     </div>
                 </div>
             </div>

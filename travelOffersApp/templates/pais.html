@@ -48,7 +48,13 @@
                         <small class="text-muted">
                             <strong>{% blocktrans %}Precio:{% endblocktrans %}</strong> ${{ oferta.precio }} - 
                             <strong>{% blocktrans %}Disponible:{% endblocktrans %}</strong>
-                            {{ oferta.disponible|yesno:"{% blocktrans %}Sí{% endblocktrans %},{% blocktrans %}No{% endblocktrans %}" }}
+                            {% if oferta.disponible %}
+                                {% trans "Sí" %}
+                            {% else %}
+                                {% trans "No" %}
+                            {% endif %}
+
+
                         </small>
                     </li>
                 {% empty %}

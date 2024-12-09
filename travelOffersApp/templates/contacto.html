@@ -44,33 +44,38 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="contact-form bg-white" style="padding: 30px;">
-                    <div id="success"></div>
-                    <form name="sentMessage" id="contactForm">
+                    {% if success %}
+                        <div class="alert alert-success" role="alert">
+                            {% blocktrans %}Tu mensaje ha sido enviado exitosamente.{% endblocktrans %}
+                        </div>
+                    {% endif %}
+                    {% if error %}
+                        <div class="alert alert-danger" role="alert">
+                            {% blocktrans %}Ocurrió un problema al enviar tu mensaje. Por favor, inténtalo de nuevo.{% endblocktrans %}
+                        </div>
+                    {% endif %}
+                    <form method="post" action="{% url 'contacto' %}">
+                        {% csrf_token %}
                         <div class="form-row">
                             <div class="control-group col-sm-6">
-                                <input type="text" class="form-control p-4" id="name" placeholder="{% blocktrans %}Nombre{% endblocktrans %}"
-                                    required="required" data-validation-required-message="{% blocktrans %}Por favor, introduce tu nombre{% endblocktrans %}">
-                                <p class="help-block text-danger"></p>
+                                <input type="text" name="nombre" class="form-control p-4" placeholder="{% blocktrans %}Nombre{% endblocktrans %}"
+                                    required="required">
                             </div>
                             <div class="control-group col-sm-6">
-                                <input type="email" class="form-control p-4" id="email" placeholder="{% blocktrans %}Email{% endblocktrans %}"
-                                    required="required" data-validation-required-message="{% blocktrans %}Por favor, introduce tu email{% endblocktrans %}">
-                                <p class="help-block text-danger"></p>
+                                <input type="email" name="email" class="form-control p-4" placeholder="{% blocktrans %}Email{% endblocktrans %}"
+                                    required="required">
                             </div>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control p-4" id="subject" placeholder="{% blocktrans %}Título{% endblocktrans %}"
-                                required="required" data-validation-required-message="{% blocktrans %}Por favor, introduce un título{% endblocktrans %}">
-                            <p class="help-block text-danger"></p>
+                            <input type="text" name="titulo" class="form-control p-4" placeholder="{% blocktrans %}Título{% endblocktrans %}"
+                                required="required">
                         </div>
                         <div class="control-group">
-                            <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="{% blocktrans %}Mensaje{% endblocktrans %}"
-                                required="required"
-                                data-validation-required-message="{% blocktrans %}Por favor, introduce tu mensaje{% endblocktrans %}"></textarea>
-                            <p class="help-block text-danger"></p>
+                            <textarea name="mensaje" class="form-control py-3 px-4" rows="5" placeholder="{% blocktrans %}Mensaje{% endblocktrans %}"
+                                required="required"></textarea>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">
+                            <button class="btn btn-primary py-3 px-4" type="submit">
                                 {% blocktrans %}Enviar{% endblocktrans %}
                             </button>
                         </div>
@@ -81,37 +86,4 @@
     </div>
 </div>
 <!--Formulario End-->
-
-<!-- Success Modal -->
-<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="successModalLabel">
-                    {% blocktrans %}¡Enviado con éxito!{% endblocktrans %}
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {% blocktrans %}Tu mensaje se ha enviado correctamente. Nos pondremos en contacto contigo pronto.{% endblocktrans %}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                    {% blocktrans %}Cerrar{% endblocktrans %}
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of Success Modal -->
-
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        $('#successModal').modal('show');
-        this.reset();
-    });
-</script>
 {% endblock %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 from .models import Pais, Categoria, Oferta
-from django.core.mail import send_mail
+from .forms import FormularioContactoForm
 from django.conf import settings
 from django.http import HttpResponse
 from django.utils.translation import gettext as _
@@ -125,7 +125,17 @@ class AboutUsView(TemplateView):
 
 # Contacto
 def contacto(request):
-    context = {
+    success = False
+    if request.method == 'POST':
+        form = FormularioContactoForm(request.POST)
+        if form.is_valid():
+            form.save()  # Guarda el mensaje en la base de datos
+            success = True
+    else:
+        form = FormularioContactoForm()
+
+    return render(request, 'contacto.html', {
         'titulo_contacto': _("Contáctanos"),
-    }
-    return render(request, 'contacto.html', context)
+        'form': form,
+        'success': success
+    })

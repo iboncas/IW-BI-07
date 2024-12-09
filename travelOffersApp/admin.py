@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Pais, Categoria, Oferta
+from .models import Pais, Categoria, Oferta, FormularioContacto
 
 def marcar_como_disponible(modeladmin, request, queryset):
     queryset.update(disponible=True)
@@ -48,4 +48,5 @@ class OfertaAdmin(admin.ModelAdmin):
 admin.site.register(Pais, PaisAdmin)
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Oferta, OfertaAdmin)
+admin.site.register(FormularioContacto)
 

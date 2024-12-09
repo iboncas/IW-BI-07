@@ -54,43 +54,48 @@
     <!-- Topbar End -->
 
     <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
-            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
-                <a href="{% url 'landing' %}" class="navbar-brand">
-                    <h2 class="m-0 text-primary"><span class="text-dark">{% blocktrans %}TRAVEL{% endblocktrans %}</span>{% blocktrans %}ER{% endblocktrans %}</h2>
-                </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto py-0">
-                        <a href="{% url 'landing' %}" class="nav-item nav-link">{% blocktrans %}Home{% endblocktrans %}</a>
-                        <a href="{% url 'categorias' %}" class="nav-item nav-link">{% blocktrans %}Categorías{% endblocktrans %}</a>
-                        <a href="{% url 'paises' %}" class="nav-item nav-link">{% blocktrans %}Países{% endblocktrans %}</a>
-                        <a href="{% url 'ofertas' %}" class="nav-item nav-link">{% blocktrans %}Ofertas{% endblocktrans %}</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{% blocktrans %}Información{% endblocktrans %}</a>
-                            <div class="dropdown-menu border-0 rounded-0 m-0">
-                                <a href="{% url 'aboutus' %}" class="dropdown-item">{% blocktrans %}Sobre Nosotros{% endblocktrans %}</a>
-                                <a href="{% url 'contacto' %}" class="dropdown-item">{% blocktrans %}Contacto{% endblocktrans %}</a>
-                            </div>
+<div class="container-fluid position-relative nav-bar p-0">
+    <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+            <a href="{% url 'landing' %}" class="navbar-brand">
+                <h2 class="m-0 text-primary"><span class="text-dark">{% blocktrans %}TRAVEL{% endblocktrans %}</span>{% blocktrans %}ER{% endblocktrans %}</h2>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav ml-auto py-0">
+                    <a href="{% url 'landing' %}" class="nav-item nav-link">{% blocktrans %}Home{% endblocktrans %}</a>
+                    <a href="{% url 'categorias' %}" class="nav-item nav-link">{% blocktrans %}Categorías{% endblocktrans %}</a>
+                    <a href="{% url 'paises' %}" class="nav-item nav-link">{% blocktrans %}Países{% endblocktrans %}</a>
+                    <a href="{% url 'ofertas' %}" class="nav-item nav-link">{% blocktrans %}Ofertas{% endblocktrans %}</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{% blocktrans %}Información{% endblocktrans %}</a>
+                        <div class="dropdown-menu border-0 rounded-0 m-0">
+                            <a href="{% url 'aboutus' %}" class="dropdown-item">{% blocktrans %}Sobre Nosotros{% endblocktrans %}</a>
+                            <a href="{% url 'contacto' %}" class="dropdown-item">{% blocktrans %}Contacto{% endblocktrans %}</a>
                         </div>
-                        <form action="{% url 'set_language' %}" method="post">
-                            {% csrf_token %}
-                            <select name="language">
-                                <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
-                                <option value="es" {% if LANGUAGE_CODE == 'es' %}selected{% endif %}>Español</option>
-                            </select>
-                            <button type="submit">{% trans "Cambiar idioma" %}</button>
-                        </form>
-                        
                     </div>
                 </div>
-            </nav>
-        </div>
+                <div class="navbar-nav">
+                    <form action="{% url 'set_language' %}" method="post" class="d-flex align-items-center">
+                        {% csrf_token %}
+                        <!-- Spanish Flag -->
+                        <button type="submit" name="language" value="es" class="btn btn-link p-0">
+                            <img src="{% static 'img/spain-flag.png' %}" alt="Español" style="width: 30px;" {% if LANGUAGE_CODE == 'es' %}class="selected"{% endif %}>
+                        </button>
+                        <!-- English Flag -->
+                        <button type="submit" name="language" value="en" class="btn btn-link p-0 ml-2">
+                            <img src="{% static 'img/uk-flag.png' %}" alt="English" style="width: 30px;" {% if LANGUAGE_CODE == 'en' %}class="selected"{% endif %}>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
     </div>
-    <!-- Navbar End -->
+</div>
+<!-- Navbar End -->
+
 
     <!-- Content Start -->
     <div class="container-fluid py-5">

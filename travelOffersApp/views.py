@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from .models import Pais, Categoria, Oferta
 from django.core.mail import send_mail
 from django.conf import settings
@@ -12,7 +12,7 @@ class LandingView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        paises = Pais.objects.all()
+        paises = get_list_or_404(Pais)
         baratas = []
         for pais in paises:
             barata = Oferta.objects.filter(pais=pais, disponible=True).order_by('precio').first()
@@ -28,6 +28,9 @@ class OfertasView(ListView):
     model = Oferta
     template_name = 'ofertas.html'
     context_object_name = 'ofertas'
+    
+    def get_queryset(self):
+        return get_list_or_404(Oferta)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -40,6 +43,9 @@ class OfertaView(DetailView):
     model = Oferta
     template_name = 'oferta.html'
     context_object_name = 'oferta'
+    
+    def get_object(self, queryset = None):
+        return get_object_or_404(Oferta, id=self.kwargs['pk'])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -52,6 +58,9 @@ class PaisesView(ListView):
     model = Pais
     template_name = 'paises.html'
     context_object_name = 'paises'
+    
+    def get_queryset(self):
+        return get_list_or_404(Pais)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -64,6 +73,9 @@ class PaisView(DetailView):
     model = Pais
     template_name = 'pais.html'
     context_object_name = 'pais'
+    
+    def get_object(self, queryset=None):
+        return get_object_or_404(Pais, id=self.kwargs['pk'])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -76,6 +88,9 @@ class CategoriasView(ListView):
     model = Categoria
     template_name = 'categorias.html'
     context_object_name = 'categorias'
+    
+    def get_queryset(self):
+        return get_list_or_404(Categoria)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -88,6 +103,9 @@ class CategoriaView(DetailView):
     model = Categoria
     template_name = 'categoria.html'
     context_object_name = 'categoria'
+    
+    def get_object(self, queryset=None):
+        return get_object_or_404(Categoria, id=self.kwargs['pk'])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

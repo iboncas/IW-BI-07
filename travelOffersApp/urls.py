@@ -10,5 +10,5 @@ urlpatterns = [
     path('categorias/', views.CategoriasView.as_view(), name='categorias'),
     path('categorias/<str:pk>/', views.CategoriaView.as_view(), name='categoria'),
     path('aboutus/', views.AboutUsView.as_view(), name='aboutus'),
-    path('contacto/', views.contacto, name='contacto'),  # Cambiar ContactoView por contacto
+    path('contacto/', views.contacto, name='contacto'),
 ]

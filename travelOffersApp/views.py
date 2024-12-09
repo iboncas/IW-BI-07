@@ -45,7 +45,7 @@ class OfertaView(DetailView):
     context_object_name = 'oferta'
     
     def get_object(self, queryset = None):
-        return get_object_or_404(Oferta, id=self.kwargs['pk'])
+        return get_object_or_404(Oferta, id_oferta=self.kwargs['pk'])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -75,7 +75,7 @@ class PaisView(DetailView):
     context_object_name = 'pais'
     
     def get_object(self, queryset=None):
-        return get_object_or_404(Pais, id=self.kwargs['pk'])
+        return get_object_or_404(Pais, nombre=self.kwargs['pk'])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -105,7 +105,7 @@ class CategoriaView(DetailView):
     context_object_name = 'categoria'
     
     def get_object(self, queryset=None):
-        return get_object_or_404(Categoria, id=self.kwargs['pk'])
+        return get_object_or_404(Categoria, nombre=self.kwargs['pk'])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

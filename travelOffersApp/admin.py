@@ -14,7 +14,6 @@ admin.site.index_title = "Bienvenido al Panel de Administración"
 class MyAdminSite(admin.AdminSite):
     def each_context(self, request):
         context = super().each_context(request)
-        # Asegúrate de que la ruta a tu archivo CSS sea correcta
         context['css_files'] = ['admin/css/admin.css']
         return context
 
@@ -45,8 +44,6 @@ class OfertaAdmin(admin.ModelAdmin):
         }),
     )
     actions = [marcar_como_disponible]
-    
-
 
 admin.site.register(Pais, PaisAdmin)
 admin.site.register(Categoria, CategoriaAdmin)

@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% load static %}
-{% load i18n %} <!-- Cargar etiquetas de traducción -->
+{% load i18n %}
 
 {% block title %}
-    {% blocktrans %}{{ categoria.nombre }}{% endblocktrans %}
+    {% trans categoria.nombre %}
 {% endblock %}
 
 {% block content %}

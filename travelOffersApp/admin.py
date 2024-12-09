@@ -11,15 +11,6 @@ admin.site.site_header = "Panel de Administración - Travel Offers"
 admin.site.site_title = "Travel Offers Admin"
 admin.site.index_title = "Bienvenido al Panel de Administración"
 
-class MyAdminSite(admin.AdminSite):
-    def each_context(self, request):
-        context = super().each_context(request)
-        context['css_files'] = ['admin/css/admin.css']
-        return context
-
-# Crear la instancia de MyAdminSite
-admin_site = MyAdminSite(name='myadmin')
-
 class PaisAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'continente')  # Mostrar estas columnas
     search_fields = ('nombre',)  # Campo de búsqueda
@@ -34,19 +25,15 @@ class OfertaAdmin(admin.ModelAdmin):
     list_editable = ('precio', 'disponible')  # Hacer editables estas columnas
     search_fields = ('nombre', 'pais__nombre')  # Buscar por título y país
     list_filter = ('disponible', 'pais')  # Agregar filtros
-    fieldsets = (
-        ("Información general", {
-            'fields': ('titulo', 'descripcion', 'pais', 'categoria')
-        }),
-        ("Información de precio y disponibilidad", {
-            'fields': ('precio', 'disponible'),
-            'classes': ('collapse',),  # Opcional: para colapsar esta sección
-        }),
-    )
     actions = [marcar_como_disponible]
+    
+class FormularioAdmin(admin.ModelAdmin):
+    list_display = ('nombre', 'email', 'titulo', 'respondido') # Mostrar las columnas indicadas
+    search_fields = ('nombre', 'email') # Buscar por esos campos
+    list_filter = ('respondido',) # Filtro por respondido
 
 admin.site.register(Pais, PaisAdmin)
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Oferta, OfertaAdmin)
-admin.site.register(FormularioContacto)
+admin.site.register(FormularioContacto, FormularioAdmin)
 
